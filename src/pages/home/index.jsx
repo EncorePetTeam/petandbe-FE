@@ -6,7 +6,7 @@ const index = () => {
 			<nav className="nav">
 				<div className="nav__logo">
 					<div className="logo">
-						<h1>펫놀자</h1>
+						<h1>펫앤비</h1>
 					</div>
 				</div>
 				<div className="nav__search">

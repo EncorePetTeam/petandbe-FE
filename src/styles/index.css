@@ -1,3 +1,9 @@
+:root {
+	--dark-mode: black;
+	--light-mode: white;
+	--light-footer: #ddd;
+}
+
 html,
 body {
 	padding: 0;
@@ -8,11 +14,57 @@ body {
 
 a {
 	text-decoration: none;
+	color: black;
 }
 
 ul {
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	padding: 0;
+	margin: 0;
 	list-style: none;
 }
-li {
-	list-style: none;
+
+.nav {
+	display: flex;
+	width: calc(100% - 48px);
+	padding: 0 24px;
+	height: 80px;
+	border-bottom: 1px solid #ccc;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.nav.fixed {
+	position: sticky;
+	top: 0;
+}
+
+.footer {
+	width: calc(100% - 48px);
+	height: 60px;
+	padding: 20px 24px;
+	border-top: 1px solid #ccc;
+}
+
+.footer.fixed {
+	position: absolute;
+	bottom: 0;
+}
+
+.footer__menu-ul {
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+}
+
+.footer__infos {
+	color: #888;
+	font-weight: 400;
+	font-size: 12px;
+	border-top: 1px solid #ccc;
+	padding-top: 10px;
 }

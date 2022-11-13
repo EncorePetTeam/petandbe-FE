@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import SeoHead from '../components/atoms/SeoHead/SeoHead'
+import { SeoHead } from '../components/atoms/SeoHead'
 
 export default function Home() {
   return (

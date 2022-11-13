@@ -1,0 +1,13 @@
+.logo{
+  width: 15%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  .logo__icons {
+    font-size: 22px;
+  }
+  .logo__title {
+    padding-left: 5px;
+    font-size: 22px;
+  }
+}

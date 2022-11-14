@@ -12,7 +12,7 @@ const Layout = ({children} :LayOutProps) => {
   return (
     <div>
       <Header />
-      <main>{children}</main>
+      <main className='main'>{children}</main>
       <Footer />
     </div>
   )

@@ -8,7 +8,7 @@ interface LabelProps {
 const Label = ({fontWeight, fontSize} :LabelProps) => {
   return (
     <div>
-      <span className='label'></span>
+      <span className='label'>hi</span>
       <style jsx>{`
         .label {
           font-size: ${fontSize};

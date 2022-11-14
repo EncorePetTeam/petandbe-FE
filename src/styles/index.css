@@ -2,6 +2,8 @@
 	--dark-mode: black;
 	--light-mode: white;
 	--light-footer: #ddd;
+	--desktop-padding: 0 24px;
+	--desktop-width: calc(100% - 48px);
 }
 
 html,
@@ -30,12 +32,13 @@ li {
 
 .nav {
 	display: flex;
-	width: calc(100% - 48px);
+	width: var(--desktop-width);
 	padding: 0 24px;
 	height: 80px;
 	border-bottom: 1px solid #ccc;
 	align-items: center;
 	justify-content: space-between;
+	background-color: var(--light-mode);
 }
 
 .nav.fixed {
@@ -45,22 +48,31 @@ li {
 }
 
 .menu {
-	width: 100%;
+	width: var(--desktop-width);
+	padding: 0 24px;
 	height: 100px;
 	position: absolute;
 	top: 81px;
 	position: sticky;
+	background-color: var(--light-mode);
+}
+
+.main {
+	width: var(--desktop-width);
+	padding: 0 24px;
 }
 
 .footer {
-	width: calc(100% - 48px);
+	width: var(--desktop-width);
 	height: 60px;
 	padding: 20px 24px;
 	border-top: 1px solid #ccc;
+	background-color: var(--light-mode);
 }
 
 .footer.fixed {
 	position: absolute;
+	position: sticky;
 	bottom: 0;
 }
 

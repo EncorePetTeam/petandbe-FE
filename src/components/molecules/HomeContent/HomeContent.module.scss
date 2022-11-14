@@ -1,0 +1,10 @@
+.contents {
+  // margin: 10px;
+  width: calc(25% - 20px);
+  margin: 10px 0;
+  height: auto;
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+}

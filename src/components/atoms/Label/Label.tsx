@@ -3,12 +3,13 @@ import React from 'react'
 interface LabelProps {
   fontWeight? :string
   fontSize? :string
+  content :string
 }
 
-const Label = ({fontWeight, fontSize} :LabelProps) => {
+const Label = ({fontWeight, fontSize, content} :LabelProps) => {
   return (
     <div>
-      <span className='label'>hi</span>
+      <span className='label'>{content}</span>
       <style jsx>{`
         .label {
           font-size: ${fontSize};

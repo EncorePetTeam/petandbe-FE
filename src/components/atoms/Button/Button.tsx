@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './Button.module.scss';
 
 interface ButtonProps {
   btnText :string;
@@ -6,7 +7,7 @@ interface ButtonProps {
 
 function Button({btnText}: ButtonProps) {
   return (
-    <button>
+    <button className={styles.btn}>
       {btnText}
     </button>
   )

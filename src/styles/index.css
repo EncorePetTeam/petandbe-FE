@@ -30,15 +30,21 @@ li {
 	list-style: none;
 }
 
+button {
+	border: none;
+	background-color: transparent;
+}
+
 .nav {
 	display: flex;
 	width: var(--desktop-width);
-	padding: 0 24px;
+	padding: var(--desktop-padding);
 	height: 80px;
 	border-bottom: 1px solid #ccc;
 	align-items: center;
 	justify-content: space-between;
 	background-color: var(--light-mode);
+	z-index: 1;
 }
 
 .nav.fixed {
@@ -47,19 +53,23 @@ li {
 	top: 0;
 }
 
-.menu {
-	width: var(--desktop-width);
-	padding: 0 24px;
+.home-menu {
+	/* width: var(--desktop-width); */
+	padding: var(--desktop-padding);
+	display: flex;
+	align-items: center;
 	height: 100px;
 	position: absolute;
 	top: 81px;
 	position: sticky;
 	background-color: var(--light-mode);
+	padding: var(--desktop-padding);
+	z-index: 1;
 }
 
 .main {
 	width: var(--desktop-width);
-	padding: 0 24px;
+	padding: var(--desktop-padding);
 }
 
 .footer {

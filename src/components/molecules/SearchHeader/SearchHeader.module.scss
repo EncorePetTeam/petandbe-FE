@@ -1,0 +1,22 @@
+.search {
+  border-radius: 40px;
+  border: 1px solid #ccc;
+  min-width: 335px;
+  max-width: 335px;
+  width: 25%;
+  height: 50px;
+  padding: 0 0 0 8px;
+  display: flex;
+  flex-wrap: nowrap;
+  .search__btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    padding: 0;
+    margin: 8px 8px 8px 0;
+    font-size: 20px;
+    color: white;
+    line-height: 20px;
+    background-color: #FF385C;
+  }
+}

@@ -3,21 +3,33 @@ import { Images } from '../../atoms/HomeContent'
 import { Label } from '../../atoms/Label'
 import styles from './HomeContent.module.scss'
 
-type Props = {}
+interface Content {
+  content :object;
+}
 
-const HomeContent = (props: Props) => {
+interface ContentDetail {
+  i :number;
+  location :string;
+  distance :number;
+  date :string;
+  price :number;
+  imgUrl :string,
+}
+
+const HomeContent = ({ content } :Content) => {
+  const { location, distance, date, price, imgUrl } = content;
   return (
     <div className={styles.contents}>
       <Images />
       <div className={styles.content}>
-        <Label />
-        <Label />
+        <Label content={location}/>
+        <Label content={'평점'}/>
         {/* <div className={styles.content__location}></div>
         <div className={styles.content__scope}></div> */}
       </div>
-      <Label />
-      <Label />
-      <Label />
+      <Label content={`${distance}km 거리이내`}/>
+      <Label content={date}/>
+      <Label content={`₩${price} /박`}/>
     </div>
   )
 }

@@ -1,8 +1,9 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 import { Logo } from '../../atoms/Logo'
-import { Menu } from '../../atoms/Menu'
+import { HomeMenu } from '../../atoms/HomeMenu'
 import { SearchHeader } from '../../molecules/SearchHeader'
+import { Menu } from '../../molecules/Menu'
 
 type Props = {}
 
@@ -12,6 +13,9 @@ const btnHomeGroup = [
   },
   {
     btnText: '언제든 일주일',
+  },
+  {
+    btnText: '게스트 추가',
   },
 ]
 
@@ -36,9 +40,9 @@ const Header = ({homeHeader} :HeaderProps<HomeProps>) => {
       <nav className={router.pathname === '/' ? 'nav fixed' : 'nav'}>
         <Logo />
         <SearchHeader btnGroup={btnHomeGroup} />
-        Header
+        <Menu />
       </nav>
-      <Menu />
+      <HomeMenu />
       {/* {
         homeHeader
         ? <Menu />

@@ -3,5 +3,14 @@
   width: auto;
   aspect-ratio: auto 1/1;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  position: relative;
+  background-color: #222;
+  .bookmark {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 20px;
+    translate: (-50%, -50%);
+    color: white;
+  }
 }

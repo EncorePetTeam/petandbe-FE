@@ -4,9 +4,10 @@ interface LabelProps {
   fontWeight? :string
   fontSize? :string
   content :string
+  color? :string
 }
 
-const Label = ({fontWeight, fontSize, content} :LabelProps) => {
+const Label = ({fontWeight, fontSize, content, color} :LabelProps) => {
   return (
     <div>
       <span className='label'>{content}</span>
@@ -14,6 +15,7 @@ const Label = ({fontWeight, fontSize, content} :LabelProps) => {
         .label {
           font-size: ${fontSize};
           font-weight: ${fontWeight};
+          color: ${color}
         }
       `}</style>
     </div>

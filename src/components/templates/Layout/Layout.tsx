@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
-import Header from '../../organisms/Header/Header'
+import { Footer } from '../../organisms/Footer';
+import { Header } from '../../organisms/Header'
 
 interface LayOutProps {
   children : ReactNode;
@@ -11,7 +12,8 @@ const Layout = ({children} :LayOutProps) => {
   return (
     <div>
       <Header />
-      <main>{children}</main>
+      <main className='main'>{children}</main>
+      <Footer />
     </div>
   )
 }

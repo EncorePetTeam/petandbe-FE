@@ -9,8 +9,8 @@ type Props = {}
 const Menu = (props: Props) => {
   return (
     <div className={styles.menu}>
-      <Label content='호스트 되기'/>
-      <RiGlobalLine />
+      <Label content='호스트 되기' fontSize='16px'/>
+      <RiGlobalLine className={styles.icon}/>
       <LoginMenu />
     </div>
   )

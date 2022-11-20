@@ -59,12 +59,26 @@ button {
 	display: flex;
 	align-items: center;
 	height: 100px;
-	position: absolute;
-	top: 81px;
-	position: sticky;
+	/* position: sticky; */
 	background-color: var(--light-mode);
 	padding: var(--desktop-padding);
 	z-index: 1;
+}
+
+.home-menu.fixed {
+	position: absolute;
+	position: sticky;
+	top: 81px;
+}
+
+.detail {
+	width: 100%;
+}
+
+.detail__header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .main {

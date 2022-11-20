@@ -1,5 +1,5 @@
 import React from 'react'
-import { Images } from '../../atoms/HomeContent'
+import { Images } from '../../atoms/HomePageContent'
 import { Label } from '../../atoms/Label'
 import styles from './HomeContent.module.scss'
 

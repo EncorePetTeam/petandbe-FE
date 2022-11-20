@@ -1,164 +1,42 @@
 import React from 'react'
-import { HomeContent } from '../../molecules/HomeContent'
+import { DetailImage } from '../../atoms/DetailImage'
+import { DetailReserve } from '../../atoms/DetailReserve'
+import { DetailReview } from '../../atoms/DetailReview'
+import { HostInfo } from '../../atoms/HostInfo'
+import { Location } from '../../atoms/Location'
+import { RequiredRules } from '../../atoms/RequiredRules'
+import { Title } from '../../atoms/Title'
+import { DetailContents } from '../../molecules/DetailContents'
 import styles from './Section.module.scss'
 
 type Props = {}
 
-const main = [
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-  {
-    location: '중구, 한국',
-    distance: 50,
-    date: '11월 14일 ~ 19일',
-    price: 180200,
-    imgUrl: '',
-  },
-]
-
 const Section = (props: Props) => {
   return (
-    <div className={styles.section}>
-      {main.map((current, i)=><HomeContent content={current} key={i}/>)}
-      {/* {main.map((current)=>console.log(current))} */}
+    <div>
+      <DetailImage />
+      <div className={styles.detail__flex}>
+        <div className={styles.left}>
+          <DetailContents />
+          <hr/>
+          <DetailContents />
+          <hr/>
+          <DetailContents />
+          <hr/>
+          <DetailContents />
+        </div>
+        <div className={styles.right}>
+          <DetailReserve />
+        </div>
+      </div>
+      <hr />
+      <DetailReview />
+      <hr />
+      <Location />
+      <hr />
+      <HostInfo />
+      <hr />
+      <RequiredRules />
     </div>
   )
 }

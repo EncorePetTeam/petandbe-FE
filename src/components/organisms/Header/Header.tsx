@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 import { Logo } from '../../atoms/Logo'
-import { HomeMenu } from '../../atoms/HomeMenu'
+import { HomeMenu } from '../../molecules/HomeMenu'
 import { SearchHeader } from '../../molecules/SearchHeader'
 import { Menu } from '../../molecules/Menu'
 

@@ -68,8 +68,8 @@ button {
 }
 
 .main {
-	width: var(--desktop-width);
-	padding: var(--desktop-padding);
+	/* width: var(--desktop-width); */
+	/* padding: var(--desktop-padding); */
 }
 
 .footer {

@@ -1,0 +1,116 @@
+
+.UpStart{
+width:100%;
+height: 37rem;
+margin:0;
+padding: 0;
+display:inline-block;
+background-color: black;
+}
+.content{
+    width:100%;
+    height:100%;
+    margin-right:0;
+    display:flex;
+}
+.text{
+    width:60%;
+    margin-top:14rem;
+    text-align: center;
+    color:white;
+    font-size: 60px;
+}
+
+.btn{
+    width:135px;
+    background-color: #ff385c;  
+    height:40px;
+    color:white;
+    font-size: 13px;
+    font-weight: bolder 600;
+    border-radius: 7px;
+    margin:0px auto;
+    margin-top:17rem;
+}
+.map{
+    text-align: center;
+    width:100%;
+    font-size: 30px;
+}
+.kakaomap{
+    width:500px;
+    height:500px;
+}
+.ex_text{
+    font-size:10px;
+}
+.host_money{
+    display:inline-flex    
+}
+.slide{
+    height:45rem;
+}
+.swiper{
+    text-align: center;
+    max-height:300px !important;
+}
+.superhost{
+    background-image: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F99A5FA355A2F5AE501");
+    background-size: cover;
+    height: 50rem;
+}
+.hostingtext{
+    padding-top:13rem;
+    text-align: center;
+    color:white;
+    font-size: 60px;
+}
+.host_button{
+    width:135px;
+    background-color: #ff385c;  
+    height:40px;
+    color:white;
+    font-size: 13px;
+    font-weight: bolder 600;
+    border-radius: 7px;
+    margin:0px auto;
+    margin-top:12rem;
+    margin-left:48%;
+}
+.downhost{
+    display: flex;
+    text-align: center;
+}
+.downleft{
+    width:50%;
+}
+
+.downright{
+    width:50%;
+    background-color: black;
+
+}
+.downbtn{
+    width:135px;
+    background-color: #ff385c;  
+    height:40px;
+    color:white;
+    font-size: 13px;
+    font-weight: bolder 600;
+    border-radius: 7px;
+    margin:0px auto;
+    margin-top:7rem;
+    margin-bottom:4rem;
+}
+.downtext{   
+    width:60%;
+    margin-top:7.5rem;
+    padding-left: 20%;
+    text-align: center;
+    color:white;
+    font-size: 60px;
+
+}
+.slick-list{
+    height:500px;
+}

@@ -5,7 +5,7 @@ import { Section } from '../components/organisms/Section'
 
 export default function Home() {
   return (
-    <div>
+    <div> 
       <SeoHead title={'펫앤비 | Home'} />
       <Section />
     </div>

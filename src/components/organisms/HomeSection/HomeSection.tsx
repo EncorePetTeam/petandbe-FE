@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 import { HomeContent } from '../../molecules/HomeContent'
-import styles from './Section.module.scss'
+import styles from './HomeSection.module.scss'
 
 type Props = {}
 

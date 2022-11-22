@@ -1,11 +1,11 @@
 import React from "react";
-import {Main} from '../../components/molecules/HostContent/Main'
+import {Add} from '../../../components/molecules/HostContent/Hostadd/Hostadd'
 
 
 const index = () => {
   return (
     <div>
-      <Main></Main>
+      <Add></Add>
     </div>
   );
 };

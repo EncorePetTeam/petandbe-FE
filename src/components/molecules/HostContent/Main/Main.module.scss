@@ -33,6 +33,7 @@ background-color: black;
     margin-top:17rem;
 }
 .map{
+    margin-top:3rem;
     text-align: center;
     width:100%;
     font-size: 30px;
@@ -48,14 +49,18 @@ background-color: black;
     display:inline-flex    
 }
 .slide{
+    margin-top:4rem;
     height:45rem;
 }
 .swiper{
+    margin-top: 3rem;
     text-align: center;
-    max-height:300px !important;
 }
 .superhost{
-    background-image: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F99A5FA355A2F5AE501");
+    width:90%;
+    margin: 4rem;
+    border-radius: 15px;
+    background-image: url("../dog2.jpg");
     background-size: cover;
     height: 50rem;
 }
@@ -103,7 +108,7 @@ background-color: black;
     margin-bottom:4rem;
 }
 .downtext{   
-    width:60%;
+    width:79%;
     margin-top:7.5rem;
     padding-left: 20%;
     text-align: center;
@@ -113,4 +118,7 @@ background-color: black;
 }
 .slick-list{
     height:500px;
+}
+.underimg{
+    box-sizing: content-box;
 }

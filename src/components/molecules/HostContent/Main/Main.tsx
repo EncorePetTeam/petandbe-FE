@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Main.module.scss'
-import { SimpleSlider } from '../../../atoms/Slider/slider'
+import {Slider} from '../../../atoms/Slider/Slider'
+// import {Map} from '../../../atoms/Map/Map'
 
 function Main() {
     return (
@@ -21,7 +22,7 @@ function Main() {
           수입을 확인하세요
         </h2>
         <div className={styles.kakaomap}>
-          {/* <Map></Map> */}
+          {/* <Map searchKeyword={''}></Map> */}
         </div>
         <div className={styles.money_text}>
           <div>
@@ -49,13 +50,8 @@ function Main() {
         {/* 이미지 슬라이드 참고 https://popawaw.tistory.com/260*/}
         <div className="swiper-container-main non-scroll">
             <div className={styles.swiper}>
-              <div className="item">
-              <SimpleSlider/>
-              <div className="text">
-              집으로 숙소로 호스팅하면서 자영업자가되어<br/>
-              경제적 자유에 한 걸음 더 가까워질 수<br/>
-              있었어요.
-              </div>
+              <div className="item">  
+              <Slider/>
         </div>
             </div> 
         </div>

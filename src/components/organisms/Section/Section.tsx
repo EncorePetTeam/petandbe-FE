@@ -5,7 +5,11 @@ import { DetailReview } from '../../atoms/Detail/DetailReview'
 import { HostInfo } from '../../atoms/HostInfo'
 import { Location } from '../../atoms/Location'
 import { RequiredRules } from '../../atoms/RequiredRules'
+import { Title } from '../../atoms/Title'
 import { DetailContents } from '../../molecules/DetailContents'
+import { FlexBox } from '../../molecules/FlexBox'
+import { LeftFlexBox } from '../../molecules/FlexBox/LeftFlexBox'
+import { RightFlexBox } from '../../molecules/FlexBox/RightFlexBox'
 import styles from './Section.module.scss'
 
 type Props = {}
@@ -14,8 +18,8 @@ const Section = (props: Props) => {
   return (
     <div>
       <DetailImage />
-      <div className={styles.detail__flex}>
-        <div className={styles.left}>
+      <FlexBox>
+        <LeftFlexBox width={'60%'}>
           <DetailContents />
           <hr/>
           <DetailContents />
@@ -23,11 +27,11 @@ const Section = (props: Props) => {
           <DetailContents />
           <hr/>
           <DetailContents />
-        </div>
-        <div className={styles.right}>
+        </LeftFlexBox>
+        <RightFlexBox width={'40%'}>
           <DetailReserve />
-        </div>
-      </div>
+        </RightFlexBox>
+      </FlexBox>
       <hr />
       <DetailReview />
       <hr />

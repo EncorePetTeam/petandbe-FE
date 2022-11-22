@@ -50,9 +50,10 @@ const rightTitleMenuItems = [
 
 const HomeMenu = (props: Props) => {
   const router = useRouter();
+  console.log(router.pathname === '/detail')
   return (
     <div className={router.pathname === '/' ? 'home-menu fixed' : 'home-menu'}>
-      {router.pathname === '/detail' 
+      {router.pathname === '/detail/1' 
         && <div className='detail'>
             <Title title='제목'/>
             <div className="detail__header">

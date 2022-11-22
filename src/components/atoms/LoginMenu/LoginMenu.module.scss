@@ -12,14 +12,18 @@
   .icon {
     font-size: 32px;
   }
-  .menu {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    width: 100px;
-    height: 100px;
-    background-color: white;
+}
+.menu {
+  position: absolute;
+  top: 70px;
+  right: 24px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  display: none;
+  &.active {
+    display: flex;
   }
 }

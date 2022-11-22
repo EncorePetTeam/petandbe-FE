@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useState } from 'react'
+import { Modal } from '../../atoms/Modal';
 import { Footer } from '../../organisms/Footer';
 import { Header } from '../../organisms/Header'
 
@@ -11,7 +12,7 @@ type Props = {}
 const Layout = ({children} :LayOutProps) => {
   return (
     <div>
-      <Header />
+      <Header/>
       <main className='main'>{children}</main>
       <Footer />
     </div>

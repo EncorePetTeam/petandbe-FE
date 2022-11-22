@@ -1,7 +1,6 @@
-import { useRouter } from 'next/router'
 import React from 'react'
+import { FlexBox } from '../../molecules/FlexBox'
 import { HomeContent } from '../../molecules/HomeContent'
-import styles from './HomeSection.module.scss'
 
 type Props = {}
 
@@ -178,9 +177,9 @@ const main = [
 
 const HomeSection = (props: Props) => {
   return (
-    <div className={styles.section}>
+    <FlexBox>
       {main.map((current)=><HomeContent content={current} key={current.id}/>)}
-    </div>
+    </FlexBox>
   )
 }
 

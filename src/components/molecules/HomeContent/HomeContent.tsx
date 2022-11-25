@@ -5,16 +5,14 @@ import { Label } from '../../atoms/Label'
 import styles from './HomeContent.module.scss'
 
 interface Content {
-  content :object;
-}
-
-interface ContentDetail {
-  i :number;
-  location :string;
-  distance :number;
-  date :string;
-  price :number;
-  imgUrl :string,
+  content : {
+    location :string;
+    distance :number;
+    date :string;
+    price :number;
+    imgUrl :string;
+    id :number;
+  }
 }
 
 const HomeContent = ({ content } :Content) => {

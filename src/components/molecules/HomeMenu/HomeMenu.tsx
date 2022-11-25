@@ -50,7 +50,6 @@ const rightTitleMenuItems = [
 
 const HomeMenu = (props: Props) => {
   const router = useRouter();
-  console.log(router.pathname === '/detail')
   return (
     <div className={router.pathname === '/' ? 'home-menu fixed' : 'home-menu'}>
       {router.pathname === '/detail/1' 

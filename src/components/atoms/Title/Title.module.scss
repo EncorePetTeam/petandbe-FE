@@ -8,4 +8,13 @@
 .menu__items {
   display: flex;
   // width: 50%;
+  li {
+    &+li::before {
+      margin: 0 10px;
+      content: "·";
+    }
+    // &.divide::before {
+    //   content: ;
+    // }
+  }
 }

@@ -1,0 +1,14 @@
+.left {
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  width: 5%;
+  margin: 10px 0;
+}
+
+.right {
+  & h4 {
+    margin: 0;
+  }
+}

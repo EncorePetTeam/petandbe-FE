@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 
 interface RightFlexBoxProps {
-  children :ReactNode;
+  children ?:ReactNode;
   width ?:string;
 }
 

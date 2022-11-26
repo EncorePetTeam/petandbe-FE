@@ -10,12 +10,22 @@ interface MenuItem {
   content :string;
   href? :boolean;
   img? :string;
+  divide? :boolean;
 }
 
 const TitleMenu = ({menuItems} :MenuProps<MenuItem>) => {
   return (
     <ul className={styles.menu__items}>
-      {menuItems.map((menu)=><li key={menu.id}>{menu.content}</li>)}
+      {menuItems.map((menu)=>
+        <li 
+          key={menu.id}
+          className={menu.divide && menu.href 
+          ? `${styles.divide}` 
+          : null}
+        >
+            {menu.content}
+        </li>
+      )}
     </ul>
   )
 }

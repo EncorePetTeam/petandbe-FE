@@ -5,10 +5,11 @@ import {MdSearch} from 'react-icons/md'
 
 interface SearchProps<T> {
   btnGroup :Array<T>;
+  onClickSearch ?:any;
 }
 
 interface BtnProps {
-  btnText :string
+  btnText :string;
 }
 
 const SearchHeader = ({btnGroup} :SearchProps<BtnProps>) => {

@@ -4,6 +4,7 @@ import { Logo } from '../../atoms/Logo'
 import { HomeMenu } from '../../molecules/HomeMenu'
 import { SearchHeader } from '../../molecules/SearchHeader'
 import { Menu } from '../../molecules/Menu'
+import { DetailMenu } from '../../molecules/Detail/DetailMenu'
 
 type Props = {}
 
@@ -35,14 +36,24 @@ interface HomeProps {
 
 const Header = ({homeHeader} :HeaderProps<HomeProps>) => {
   const router = useRouter();
+  const [search, setSearch] = useState(false);
+  const onClickSearch = () => {
+    setSearch(!search);
+  }
   return (
     <>
       <nav className={router.pathname === '/' ? 'nav fixed' : 'nav'}>
+      {/* <nav className={search ? 'nav search' : 'nav'}> */}
         <Logo />
+        {/* <SearchHeader btnGroup={btnHomeGroup} onClickSearch={onClickSearch}/> */}
         <SearchHeader btnGroup={btnHomeGroup} />
         <Menu />
       </nav>
-      <HomeMenu />
+      {
+        router.pathname === '/' 
+        ? <HomeMenu />
+        : <DetailMenu />
+      }
       {/* {
         homeHeader
         ? <Menu />

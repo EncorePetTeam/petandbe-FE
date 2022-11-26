@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import React from 'react'
-import { Images } from '../../atoms/Home/HomePageContent'
-import { Label } from '../../atoms/Label'
-import styles from './HomeContent.module.scss'
+import { Image } from '../../atoms/Home/HomePageContent';
+import { Label } from '../../atoms/Label';
+import styles from './HomeContent.module.scss';
 
 interface Content {
   content : {
@@ -12,15 +12,16 @@ interface Content {
     price :number;
     imgUrl :string;
     id :number;
+    like :boolean;
   }
 }
 
 const HomeContent = ({ content } :Content) => {
-  const { location, distance, date, price, imgUrl, id } = content;
+  const { location, distance, date, price, imgUrl, id, like } = content;
   return (
     <div className={styles.contents}>
+      <Image contentId={id} contentLike={like}/>
       <Link href={`/detail/${id}`}>
-        <Images />
         <div className={styles.content}>
           <Label content={location} fontWeight='700' fontSize='15px'/>
           <Label content={'평점'}/>

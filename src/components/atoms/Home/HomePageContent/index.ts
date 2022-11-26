@@ -1,2 +1,2 @@
 export * from './Content';
-export * from './Images';
+export * from './Image';

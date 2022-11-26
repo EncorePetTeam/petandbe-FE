@@ -3,63 +3,33 @@ import React from 'react'
 // import { HomeMenuIcon } from '../../Home/HomeMenuIcon'
 import { Title } from '../../atoms/Title'
 import { TitleMenu } from '../../atoms/Title/TitleMenu'
+import { HomeMenuIcon } from '../../atoms/Home/HomeMenuIcon';
 
 type Props = {}
 
-const leftTitleMenuItems = [
-  { 
+const menuIcons = [
+  {
     id: 1,
-    content: '별점',
-    href: false,
-    img: '',
+    content: '애견호텔',
+    active: true,
   },
-  { 
+  {
     id: 2,
-    content: '후기',
-    href: true,
-    img: '',
+    content: '애견카페',
+    active: false,
   },
-  { 
+  {
     id: 3,
-    content: '호스트등급',
-    href: false,
-    img: '',
-  },
-  { 
-    id: 4,
-    content: '위치',
-    href: true,
-    img: '',
+    content: '애견수영장',
+    active: false,
   },
 ]
-
-const rightTitleMenuItems = [
-  { 
-    id: 1,
-    content: '공유하기',
-    href: true,
-    img: '',
-  },
-  { 
-    id: 2,
-    content: '저장',
-    href: true,
-    img: '',
-  },
-]
-
 const HomeMenu = (props: Props) => {
   const router = useRouter();
   return (
     <div className={router.pathname === '/' ? 'home-menu fixed' : 'home-menu'}>
-      {router.pathname === '/detail/1' 
-        && <div className='detail'>
-            <Title title='제목'/>
-            <div className="detail__header">
-              <TitleMenu menuItems={leftTitleMenuItems}/>
-              <TitleMenu menuItems={rightTitleMenuItems}/>
-            </div>
-          </div>
+      {menuIcons 
+        && menuIcons.map((current)=><HomeMenuIcon key={current.id} content={current.content} active={current.active}/>)
       }
       {/* <HomeMenuIcon /> */}
     </div>

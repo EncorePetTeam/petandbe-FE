@@ -1,0 +1,58 @@
+.total{
+    width: 60%;
+    margin-left: 32%;
+}
+.containner{
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+
+.input {
+    width: 600px;
+    height: 32px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+    margin-bottom: 5rem;
+  }
+.example{
+    width: 600px;
+    height: 250px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+    margin-bottom: 5rem;
+}
+.text{
+    margin-bottom:1rem;
+}
+.detailad{
+    width: 600px;
+    height: 32px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+    margin-bottom: 3rem;
+}
+.button{
+    left:50%;
+    display:inline-block;
+    margin-right: 3rem;
+    background-color: crimson;
+    outline: none;
+}
+.bottom::after{
+    background-color: aliceblue;
+}
+.bottom{
+    margin-bottom:4rem;
+    margin-left:18rem;
+}

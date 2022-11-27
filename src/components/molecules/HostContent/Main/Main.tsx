@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Main.module.scss'
+import Link from 'next/link'
 import {Slider} from '../../../atoms/Slider/Slider'
 // import {Map} from '../../../atoms/Map/Map'
 
@@ -13,7 +14,9 @@ function Main() {
                     <br />
                     시작해보세요
                 </h1>
-                <button className={styles.btn}><b>호스팅 시작하기</b></button>
+                <Link href="/host/infor">
+                <button  className={styles.btn} ><b>호스팅 시작하기</b></button>
+                </Link>
             </div>
         </div>
         <div className={styles.map}>
@@ -75,7 +78,9 @@ function Main() {
             시작해보세요
           </div>
           <div className={styles.btn_section}>
+          <Link href="/host/infor">
             <button className ={styles.downbtn}>호스팅 시작하기</button>
+            </Link>
           </div>
         </div>
       </div>

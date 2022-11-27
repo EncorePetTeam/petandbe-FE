@@ -1,15 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './LoginMenu.module.scss'
 import { HiUserCircle, HiOutlineMenu } from 'react-icons/hi'
+import Link from 'next/link'
 
-type Props = {}
+type Props = {
+  openModal :any
+}
 
-const LoginMenu = (props: Props) => {
+const LoginMenu = ({openModal} :Props) => {
+  const [menu, setMenu] = useState(true)
+  const openMenu = () => {
+    setMenu(!menu);
+  }
   return (
-    <div className={styles.login}>
-      <HiOutlineMenu />
-      <HiUserCircle className={styles.icon}/>
-    </div>
+    <>
+      <div className={styles.login} onClick={openMenu}>
+        <HiOutlineMenu />
+        <HiUserCircle className={styles.icon}/>
+      </div>
+      <div className={menu ? `${styles.menu}` : `${styles.menu} ${styles.active}`}>
+        <ul>
+          <li onClick={openModal}>로그인</li>
+          <li>회원가입</li>
+          <li><Link href="/mypage">마이페이지</Link></li>
+        </ul>
+      </div>
+    </>
   )
 }
 

@@ -13,14 +13,15 @@ interface Content {
     imgUrl :string;
     id :number;
     like :boolean;
-  }
+  },
+  isActiveBookmark :any;
 }
 
-const HomeContent = ({ content } :Content) => {
+const HomeContent = ({ content, isActiveBookmark } :Content) => {
   const { location, distance, date, price, imgUrl, id, like } = content;
   return (
     <div className={styles.contents}>
-      <Image contentId={id} contentLike={like}/>
+      <Image contentId={id} contentLike={like} isActiveBookmark={isActiveBookmark}/>
       <Link href={`/detail/${id}`}>
         <div className={styles.content}>
           <Label content={location} fontWeight='700' fontSize='15px'/>

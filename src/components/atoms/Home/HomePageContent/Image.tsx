@@ -6,9 +6,10 @@ import Link from 'next/link';
 interface ImageProps {
   contentId :number;
   contentLike :boolean;
+  isActiveBookmark :any;
 }
 
-const Image = ({ contentId, contentLike } :ImageProps) => {
+const Image = ({ contentId, contentLike, isActiveBookmark } :ImageProps) => {
   return (
     <div className={styles.background}>
       <Link href={`/detail/${contentId}`}>
@@ -16,7 +17,7 @@ const Image = ({ contentId, contentLike } :ImageProps) => {
 
         </div>
       </Link>
-      <div className={`${styles.bookmark} ${styles.selected}`}>
+      <div className={`${styles.bookmark} ${styles.selected}`} onClick={()=>isActiveBookmark(contentId)}>
         {
           contentLike 
           ? <BsHeartFill className={styles.like}/>

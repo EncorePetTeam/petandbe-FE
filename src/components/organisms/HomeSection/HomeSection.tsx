@@ -200,11 +200,18 @@ const HomeSection = (props: Props) => {
   const [contents, setContents] = useState(main);
   const isActiveBookmark = (id :number) => {
     // setContents(...contents, like: !like)
-    setContents()
+    console.log(id);
+    contents.map((content) =>
+      content.id === id 
+      ? content
+      : content
+    )
+    console.log(contents)
+    // setContents({...contents, })
   }
   return (
     <FlexBox>
-      {contents.map((current)=><HomeContent content={current} key={current.id}/>)}
+      {contents.map((current)=><HomeContent content={current} key={current.id} isActiveBookmark={isActiveBookmark}/>)}
     </FlexBox>
   )
 }

@@ -19,8 +19,9 @@ interface DetailInfo {
 const DetailInfo = ({ detailInfo } :DetailInfoProps<DetailInfo>) => {
   return (
     <>
+      
       {detailInfo.map((current) => 
-        <FlexBox key={current.id}>
+        <div className={styles.flex} key={current.id}>
           <div className={styles.left}>
             <MdOutlineChair />
           </div>
@@ -28,8 +29,9 @@ const DetailInfo = ({ detailInfo } :DetailInfoProps<DetailInfo>) => {
             <h4>{current.title}</h4>
             <span>{current.content}</span>
           </div>
-        </FlexBox>
+        </div>
       )}
+      {/* </FlexBox> */}
     </>
   )
 }

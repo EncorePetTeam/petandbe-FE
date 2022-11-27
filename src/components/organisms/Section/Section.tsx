@@ -14,6 +14,39 @@ import styles from './Section.module.scss'
 
 type Props = {}
 
+const detailReview = [
+  {
+    id: 1,
+    userName: 'Kyla',
+    regDate: '2022년 11월',
+    content: '10/10 would recommend staying here',
+  },
+  {
+    id: 2,
+    userName: 'Kyla',
+    regDate: '2022년 11월',
+    content: '10/10 would recommend staying here',
+  },
+  {
+    id: 3,
+    userName: 'Kyla',
+    regDate: '2022년 11월',
+    content: '10/10 would recommend staying here',
+  },
+  {
+    id: 4,
+    userName: 'Kyla',
+    regDate: '2022년 11월',
+    content: '10/10 would recommend staying here',
+  },
+  {
+    id: 5,
+    userName: 'Kyla',
+    regDate: '2022년 11월',
+    content: '10/10 would recommend staying here',
+  },
+]
+
 const Section = (props: Props) => {
   return (
     <div>
@@ -27,7 +60,7 @@ const Section = (props: Props) => {
         </RightFlexBox>
       </FlexBox>
       <hr />
-      <DetailReview />
+      <DetailReview detailReview={detailReview}/>
       <hr />
       <Location />
       <hr />

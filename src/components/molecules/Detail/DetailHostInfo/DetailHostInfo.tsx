@@ -1,5 +1,6 @@
 import React from 'react'
 import { DetailDescription } from '../../../atoms/Detail/DetailDescription'
+import { DetailFacilities } from '../../../atoms/Detail/DetailFacilities'
 import { DetailInfo } from '../../../atoms/Detail/DetailInfo'
 import { DetailLocationImage } from '../../../atoms/Detail/DetailLocationImage'
 import { Title, TitleMenu } from '../../../atoms/Title'
@@ -71,6 +72,25 @@ const detailLocationImage = [
   },
 ]
 
+const detailFacilities = [
+  {
+    id: 1,
+    content: '주방',
+  },
+  {
+    id: 2,
+    content: '주방2',
+  },
+  {
+    id: 3,
+    content: '주방3',
+  },
+  {
+    id: 4,
+    content: '주방4',
+  },
+]
+
 const DetailHostInfo = (props: Props) => {
   return (
     <>
@@ -93,6 +113,9 @@ const DetailHostInfo = (props: Props) => {
           <DetailLocationImage detailLocationImage={detailLocationImage} />
           <hr />
         </>
+      }
+      {detailFacilities &&
+        <DetailFacilities contents={detailFacilities}/>
       }
     </>
   )

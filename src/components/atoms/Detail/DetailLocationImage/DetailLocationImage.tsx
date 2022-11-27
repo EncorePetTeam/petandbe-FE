@@ -20,7 +20,7 @@ const DetailLocationImage = ({ detailLocationImage } :DetailLocationImageProps<D
       <Title title='숙박 장소' />
       <FlexBox>
         {detailLocationImage.map((current)=>
-          <div className={styles.location}>
+          <div className={styles.location} key={current.id}>
             <div className={styles.image}></div>
             <div className={styles.content}>
               <p className={styles.title}>{current.title}</p>

@@ -20,7 +20,7 @@ const DetailInfo = ({ detailInfo } :DetailInfoProps<DetailInfo>) => {
   return (
     <>
       {detailInfo.map((current) => 
-        <FlexBox>
+        <FlexBox key={current.id}>
           <div className={styles.left}>
             <MdOutlineChair />
           </div>

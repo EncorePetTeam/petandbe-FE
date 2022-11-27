@@ -1,6 +1,7 @@
 import React from 'react'
 import { DetailDescription } from '../../../atoms/Detail/DetailDescription'
 import { DetailInfo } from '../../../atoms/Detail/DetailInfo'
+import { DetailLocationImage } from '../../../atoms/Detail/DetailLocationImage'
 import { Title, TitleMenu } from '../../../atoms/Title'
 import { FlexBox } from '../../FlexBox'
 
@@ -57,6 +58,19 @@ Escape the busy life and relax in the countryside in Beautiful Kanarraville, UT.
 This serene, private guest home on our family ranch is just 9 miles south of Cedar City. Enjoy our friendly farm animals, orchard, and seasonal garden. 
 `
 
+const detailLocationImage = [
+  {
+    id: 1,
+    title: '침실',
+    content: '킹사이즈 침대 1개',
+  },
+  {
+    id: 2,
+    title: '거실',
+    content: '소파베드 1개',
+  },
+]
+
 const DetailHostInfo = (props: Props) => {
   return (
     <>
@@ -68,7 +82,18 @@ const DetailHostInfo = (props: Props) => {
       <hr />
       <DetailInfo detailInfo={detailInfo}/>
       <hr />
-      {detailDescription && <DetailDescription detailDescription={detailDescription}/>}
+      {detailDescription && 
+        <>
+          <DetailDescription detailDescription={detailDescription}/>
+          <hr />
+        </>
+      }
+      {detailLocationImage && 
+        <>
+          <DetailLocationImage detailLocationImage={detailLocationImage} />
+          <hr />
+        </>
+      }
     </>
   )
 }

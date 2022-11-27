@@ -79,7 +79,9 @@ button {
 
 .detail {
 	width: var(--desktop-width);
+	max-width: 1024px;
 	padding: var(--desktop-padding);
+	margin: auto;
 }
 
 .detail__header {
@@ -91,6 +93,11 @@ button {
 .main {
 	width: var(--desktop-width);
 	padding: var(--desktop-padding);
+}
+
+.detail__content {
+	max-width: 1024px;
+	margin: auto;
 }
 
 .footer {

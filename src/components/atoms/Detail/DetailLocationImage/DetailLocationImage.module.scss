@@ -1,0 +1,17 @@
+.location {
+  width: 100%;
+  border-radius: 8px;
+  &+.location {
+    margin-left: 50px;
+  }
+  .image {
+    background-color: #ccc;
+    border-radius: 8px;
+    // width: 50%;
+    aspect-ratio: auto 1/1;
+  }
+  .title {
+    font-weight: 500;
+    margin: 5px auto;
+  }
+}

@@ -9,7 +9,7 @@ interface ImageProps {
   isActiveBookmark :any;
 }
 
-const Image = ({ contentId, contentLike, isActiveBookmark } :ImageProps) => {
+const Image = React.memo(({ contentId, contentLike, isActiveBookmark } :ImageProps) => {
   return (
     <div className={styles.background}>
       <Link href={`/detail/${contentId}`}>
@@ -26,6 +26,6 @@ const Image = ({ contentId, contentLike, isActiveBookmark } :ImageProps) => {
       </div>
     </div>
   )
-}
+})
 
 export { Image }

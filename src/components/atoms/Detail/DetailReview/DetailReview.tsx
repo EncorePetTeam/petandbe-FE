@@ -15,7 +15,7 @@ const DetailReview = ({detailReview} :DetailReviewProps<DetailReview>) => {
   return (
     <div className='flex'>
       {detailReview && detailReview.map((current)=>
-        <div className="review">
+        <div className="review" key={current.id}>
           <div className="title">
             <div className="user__icon"></div>
             <div className="user__info">

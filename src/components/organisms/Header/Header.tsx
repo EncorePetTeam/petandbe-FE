@@ -43,22 +43,12 @@ const Header = ({homeHeader} :HeaderProps<HomeProps>) => {
   return (
     <>
       <nav className={router.pathname === '/' ? 'nav fixed' : 'nav'}>
-      {/* <nav className={search ? 'nav search' : 'nav'}> */}
         <Logo />
         {/* <SearchHeader btnGroup={btnHomeGroup} onClickSearch={onClickSearch}/> */}
         <SearchHeader btnGroup={btnHomeGroup} />
         <Menu />
       </nav>
-      {
-        router.pathname === '/' 
-        ? <HomeMenu />
-        : <DetailMenu />
-      }
-      {/* {
-        homeHeader
-        ? <Menu />
-        : null
-      } */}
+      { router.pathname === '/' && <HomeMenu /> }
     </>
   )
 }

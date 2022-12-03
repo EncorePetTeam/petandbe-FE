@@ -3,22 +3,20 @@ import styles from './LoginMenu.module.scss'
 import { HiUserCircle, HiOutlineMenu } from 'react-icons/hi'
 import Link from 'next/link'
 
-type Props = {
-  openModal :any
+interface LoginMenuProps {
+  openModal :any;
+  openMenu :any;
+  menu :boolean;
 }
 
-const LoginMenu = ({openModal} :Props) => {
-  const [menu, setMenu] = useState(true)
-  const openMenu = () => {
-    setMenu(!menu);
-  }
+const LoginMenu = ({ openModal, menu, openMenu } :LoginMenuProps) => {  
   return (
     <>
       <div className={styles.login} onClick={openMenu}>
         <HiOutlineMenu />
         <HiUserCircle className={styles.icon}/>
       </div>
-      <div className={menu ? `${styles.menu}` : `${styles.menu} ${styles.active}`}>
+      <div className={menu ? `${styles.menu} ${styles.active}` : `${styles.menu}`}>
         <ul>
           <li onClick={openModal}>로그인</li>
           <li>회원가입</li>

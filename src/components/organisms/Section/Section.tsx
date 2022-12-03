@@ -12,8 +12,6 @@ import { LeftFlexBox } from '../../molecules/FlexBox/LeftFlexBox'
 import { RightFlexBox } from '../../molecules/FlexBox/RightFlexBox'
 import styles from './Section.module.scss'
 
-type Props = {}
-
 const detailReview = [
   {
     id: 1,
@@ -47,7 +45,7 @@ const detailReview = [
   },
 ]
 
-const Section = (props: Props) => {
+const Section = () => {
   return (
     <div>
       <DetailImage />

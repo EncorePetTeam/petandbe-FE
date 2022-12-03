@@ -99,7 +99,21 @@ button {
 	max-width: 1024px;
 	margin: auto;
 }
-
+.mypage {
+	margin: 20px 0;
+}
+.bookmark__area {
+	/* width: 100%; */
+	display: flex;
+	overflow-x: scroll;
+}
+.bookmark__area > div {
+	width: 200px;
+	aspect-ratio: 1 / 1;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	flex-shrink: 0;
+}
 .footer {
 	width: var(--desktop-width);
 	height: 60px;

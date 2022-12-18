@@ -95,9 +95,19 @@ button {
 	padding: var(--desktop-padding);
 }
 
+.background-gray {
+	background-color: #eee;
+}
+
 .detail__content {
-	max-width: 1024px;
+	max-width: 700px;
 	margin: auto;
+	/* background-color: #888; */
+	background-color: white;
+}
+.detail__content > div + div {
+	margin: 5px 0;
+	background-color: transparent;
 }
 .mypage {
 	margin: 20px 0;

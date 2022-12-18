@@ -1,0 +1,14 @@
+.tabItems {
+  display:flex;
+  border-bottom: 1px solid #ccc;
+  li {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  // & li + li {
+  //   padding: 10px 20px;
+  // }
+  & li.active {
+    border-bottom: 3px solid black;
+  }
+}

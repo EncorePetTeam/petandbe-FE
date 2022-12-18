@@ -6,9 +6,11 @@ import { FlexBox } from '../../components/molecules/FlexBox';
 import { LeftFlexBox } from '../../components/molecules/FlexBox/LeftFlexBox/LeftFlexBox';
 import { RightFlexBox } from '../../components/molecules/FlexBox/RightFlexBox';
 
-type Props = {}
+interface MyPageProps {
+  openModal ?: any;
+}
 
-const MyPage = (props: Props) => {
+const MyPage = ({ openModal }) => {
   return (
     <FlexBox>
         <LeftFlexBox width={'30%'}>
@@ -23,7 +25,7 @@ const MyPage = (props: Props) => {
             <Label content={`프로필 수정하기`} fontSize='13px' color='black'/>
             <Title title='북마크' />
             <div className="bookmark__area">
-              <div></div>
+              <div onClick={openModal}></div>
               <div></div>
               <div></div>
               <div></div>

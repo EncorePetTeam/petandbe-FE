@@ -27,14 +27,15 @@ const btnSearchGroup = [
 ]
 
 interface HeaderProps<T> {
-  homeHeader? :Array<T>;
+  homeHeader ?:Array<T>;
+  openModal ?: any;
 }
 
 interface HomeProps {
   menuName: string;
 }
 
-const Header = ({homeHeader} :HeaderProps<HomeProps>) => {
+const Header = ({ homeHeader, openModal } :HeaderProps<HomeProps>) => {
   const router = useRouter();
   const [search, setSearch] = useState(false);
   const onClickSearch = () => {
@@ -46,7 +47,7 @@ const Header = ({homeHeader} :HeaderProps<HomeProps>) => {
         <Logo />
         <SearchHeader btnGroup={btnHomeGroup} onClickSearch={onClickSearch}/>
         {/* <SearchHeader btnGroup={btnHomeGroup} /> */}
-        <Menu />
+        <Menu openModal={openModal}/>
       </nav>
       { router.pathname === '/' && <HomeMenu /> }
     </>

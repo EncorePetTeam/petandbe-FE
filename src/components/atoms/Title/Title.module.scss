@@ -2,6 +2,9 @@
   width: 100%;  
   h1 {
     margin: 20px 0;
+    &.margin {
+      margin: 5px 0;
+    }
   }
 }
 

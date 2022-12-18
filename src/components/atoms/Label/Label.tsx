@@ -3,7 +3,7 @@ import React from 'react'
 interface LabelProps {
   fontWeight? :string
   fontSize? :string
-  content :string
+  content :string | number
   color? :string
 }
 

@@ -2,30 +2,35 @@ import Link from 'next/link';
 import React from 'react'
 import { Image } from '../../atoms/Home/HomePageContent';
 import { Label } from '../../atoms/Label';
+import { FaStar } from 'react-icons/fa'
 import styles from './HomeContent.module.scss';
 
 interface Content {
   content : {
-    location :string;
+    address :string;
     distance :number;
     date :string;
     price :number;
     imgUrl :string;
-    id :number;
+    accommodationId :number;
+    avgRate :number;
     like :boolean;
   },
   isActiveBookmark :any;
 }
 
 const HomeContent = ({ content, isActiveBookmark } :Content) => {
-  const { location, distance, date, price, imgUrl, id, like } = content;
+  const { address, distance, date, price, imgUrl, accommodationId, like, avgRate } = content;
   return (
     <div className={styles.contents}>
-      <Image contentId={id} contentLike={like} isActiveBookmark={isActiveBookmark}/>
-      <Link href={`/detail/${id}`}>
+      <Image contentId={accommodationId} contentLike={like} isActiveBookmark={isActiveBookmark}/>
+      <Link href={`/detail/${accommodationId}`}>
         <div className={styles.content}>
-          <Label content={location} fontWeight='700' fontSize='15px'/>
-          <Label content={'평점'}/>
+          <Label content={address} fontWeight='700' fontSize='15px'/>
+          <div className={styles.rate}>
+            <FaStar />
+            <Label content={avgRate}/>
+          </div>
           {/* <div className={styles.content__location}></div>
           <div className={styles.content__scope}></div> */}
         </div>

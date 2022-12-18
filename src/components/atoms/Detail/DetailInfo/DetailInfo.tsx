@@ -37,3 +37,5 @@ const DetailInfo = ({ detailInfo } :DetailInfoProps<DetailInfo>) => {
 }
 
 export { DetailInfo }
+
+// 6641250756%3A6PizXPvkvVmB3d%3A0%3AAYfXhpEqgKkTB2nKtYIDRRmzou7igEbnKbVqoFInxg

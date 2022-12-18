@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React, { ReactNode, useState } from 'react'
 import { Modal } from '../../atoms/Modal';
 import { Footer } from '../../organisms/Footer';
@@ -10,11 +11,19 @@ interface LayOutProps {
 type Props = {}
 
 const Layout = ({children} :LayOutProps) => {
+  const [modal, setModal] = useState({ active: false });
+  const openModal = () => {
+    setModal({...modal, active: !modal.active});
+  }
+  const router = useRouter();
   return (
     <div>
-      <Header/>
-      <main className='main'>{children}</main>
+      <Header openModal={openModal}/>
+      <main className={router.pathname.includes('/detail') ? `main background-gray` : `main`}>
+        {children}
+      </main>
       <Footer />
+      {modal.active && <Modal openModal={openModal}/>}
     </div>
   )
 }

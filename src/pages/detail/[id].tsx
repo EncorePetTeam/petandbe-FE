@@ -69,6 +69,14 @@ const tabItems = [
   },
 ]
 
+const defaultRoom = {
+  id : 1,
+  name : '호스트 정보',
+  score : 4.7,
+  title : '영등포 호텔',
+  parking :false,
+}
+
 const DetailPage = () => {
   const productsName = 'Ex'
   const [selectTab, setSelectTab] = useState(1);
@@ -81,14 +89,17 @@ const DetailPage = () => {
       {/* <DetailMenu /> */}
       <div>
         <DetailImage />
-        <DetailAreaInfo />
+        <DetailAreaInfo room={defaultRoom}/>
+      </div>
+      <div className='room'>
+        <DetailTab tabItems={tabItems} tabHandle={handleTabItem} selectTab={selectTab}/>
+        { selectTab === 1 && <DetailRoomInfo /> }
+        { selectTab === 2 && <Location /> }
+        { selectTab === 3 && <Location /> }
+        { selectTab === 4 && <Location /> }
       </div>
       <div>
-        <DetailTab tabItems={tabItems} tabHandle={handleTabItem} selectTab={selectTab}/>
-        { selectTab === 1 
-          ? <DetailRoomInfo />
-          : null
-        }
+        판매자정보
       </div>
       {/* <FlexBox>
         <LeftFlexBox width={'60%'}>
@@ -106,6 +117,11 @@ const DetailPage = () => {
       <HostInfo />
       <hr />
       <RequiredRules /> */}
+      <style jsx>{`
+        .room {
+          background-color: white;
+        }
+      `}</style>
     </div>
   )
 }

@@ -1,5 +1,7 @@
-import React from 'react'
-import { DetailRoom } from '../../../atoms/Detail/DetailRoom'
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+import { DetailRoom } from '../../../atoms/Detail/DetailRoom';
 
 type Props = {}
 
@@ -47,11 +49,21 @@ const room = [
 ]
 
 const DetailRoomInfo = (props: Props) => {
+  const [startDate, setStartDate] = useState(new Date());
   return (
     <div>
       <div className='flex__area'>
         <div className="date__area">
-          2022.12.27 ~ 2022.12.28
+        <DatePicker 
+          selected={startDate} 
+          onChange={date => setStartDate(date)} 
+          dateFormat= "yyyy-MM-dd"
+        />
+        <DatePicker 
+          selected={startDate} 
+          onChange={date => setStartDate(date)} 
+          dateFormat= "yyyy-MM-dd"
+        />        
         </div>
       </div>
       <div className='room__area'>
@@ -75,6 +87,7 @@ const DetailRoomInfo = (props: Props) => {
           border-bottom: 1px solid #ccc;
         }
         .date__area {
+          display: flex;
           width: calc(100% - 20px);
           height: 40px;
           border: 1px solid #ccc;

@@ -6,6 +6,12 @@ import { HomeContent } from '../components/molecules/HomeContent'
 import { homeConnectApi } from './api/home/HomeDetail'
 import { GetServerSideProps } from 'next'
 
+const addressCodeObject = {
+  '11011': {area:'서울특별시', district: '중랑구'}
+}
+console.log(addressCodeObject['11011']);
+console.log(addressCodeObject['11011'].area);
+console.log(addressCodeObject['11011'].district);
   // {
   //   location: '중구, 한국',
   //   distance: 50,

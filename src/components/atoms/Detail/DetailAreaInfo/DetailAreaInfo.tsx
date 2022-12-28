@@ -1,6 +1,7 @@
 import React from 'react'
 import { Title } from '../../Title'
 import {BsHeartFill, BsHeart, BsShareFill} from 'react-icons/bs'
+import { dataSetCommas } from '../../../../pages/api/dataSet';
 
 interface DetailAreaInfoProps<T> {
   room :Array<T>
@@ -12,10 +13,11 @@ interface AreaInfo {
   score :number;
   title :string;
   parking :boolean;
+  reviewLength? :number;
 }
 
 const DetailAreaInfo = ({ room } :DetailAreaInfoProps<AreaInfo>) => {
-  const { id, name, score, title, parking } = room;
+  const { id, name, score, title, parking, reviewLength } = room;
   return (
     <div className='host__area'>
       {name}
@@ -35,7 +37,7 @@ const DetailAreaInfo = ({ room } :DetailAreaInfoProps<AreaInfo>) => {
           </span>
         </div>
       </div>
-      <div>별점(7,148) > </div>
+      {/* <div>별점({dataSetCommas(reviewLength)}) > </div> */}
       {!parking && <div>주차불가</div>}
       <style jsx>{`
         .host__area {

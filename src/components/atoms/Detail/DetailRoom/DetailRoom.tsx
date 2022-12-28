@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react'
 import DatePicker from 'react-datepicker'
+import { dataSetCommas } from '../../../../pages/api/dataSet';
 
 interface DetailRoomProps<T> {
   room: Array<T>
@@ -17,6 +18,7 @@ interface RoomInfo {
 
 const DetailRoom = ({ room } :DetailRoomProps<RoomInfo>) => {
   const { id, name, item, startTime, weekdays, weekend } = room;
+  console.log(room)
   return (
     <div className='room'>
       <Link href={{ 
@@ -28,7 +30,7 @@ const DetailRoom = ({ room } :DetailRoomProps<RoomInfo>) => {
       <span>{item}</span>
       <div className='flex__area'>
         <span>숙박({startTime} ~)</span>
-        <span className='text--bold'>{weekdays.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원</span>
+        <span className='text--bold'>{dataSetCommas(weekdays)}원</span>
       </div>
       <button>객실 선택하기</button>
       </Link>

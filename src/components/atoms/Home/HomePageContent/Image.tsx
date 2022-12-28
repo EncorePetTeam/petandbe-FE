@@ -7,14 +7,15 @@ interface ImageProps {
   contentId :number;
   contentLike :boolean;
   isActiveBookmark :any;
+  imageUrl :string;
 }
 
-const Image = React.memo(({ contentId, contentLike, isActiveBookmark } :ImageProps) => {
+const Image = React.memo(({ contentId, contentLike, isActiveBookmark,imageUrl } :ImageProps) => {
   return (
     <div className={styles.background}>
       <Link href={`/detail/${contentId}`}>
         <div className={styles.image}>
-
+          <img src={imageUrl} alt="" className={styles.img__class}/>
         </div>
       </Link>
       <div className={`${styles.bookmark} ${styles.selected}`} onClick={()=>isActiveBookmark(contentId)}>

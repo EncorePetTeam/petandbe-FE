@@ -16,6 +16,7 @@ import { FlexBox } from '../../components/molecules/FlexBox';
 import { LeftFlexBox } from '../../components/molecules/FlexBox/LeftFlexBox';
 import { RightFlexBox } from '../../components/molecules/FlexBox/RightFlexBox';
 import { Section } from '../../components/organisms/Section';
+import { GetServerSideProps } from 'next'
 
 const detailReview = [
   {
@@ -75,9 +76,11 @@ const defaultRoom = {
   score : 4.7,
   title : '영등포 호텔',
   parking :false,
+  reviewLength: 7143,
 }
 
-const DetailPage = () => {
+const DetailPage = ({response}) => {
+  console.log(response.imageFileUrlList)
   const productsName = 'Ex'
   const [selectTab, setSelectTab] = useState(1);
   const handleTabItem = (id :number) => {
@@ -88,7 +91,7 @@ const DetailPage = () => {
       <SeoHead title={`펫앤비 | ${productsName}`} />
       {/* <DetailMenu /> */}
       <div>
-        <DetailImage />
+        <DetailImage imgUrl={response.imageFileUrlList}/>
         <DetailAreaInfo room={defaultRoom}/>
       </div>
       <div className='room'>
@@ -124,6 +127,18 @@ const DetailPage = () => {
       `}</style>
     </div>
   )
+}
+export const getServerSideProps: GetServerSideProps = async () => {
+  // const router = useRouter();
+  const response = await (await fetch(`http://localhost:4000/api/accommodationFilter/8`)).json();
+  return { props: { response } };
+  // try {
+  //   const response = await axios.get("http://localhost:4000/api/filteringAccommodationList")
+  //     .then((result) => console.log(result));
+  //   return { props: { response } };
+  // } catch(e) {
+  //   throw new Error(`${e}`);
+  // }
 }
 
 export default DetailPage;

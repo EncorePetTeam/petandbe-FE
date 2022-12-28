@@ -4,29 +4,35 @@ import { Image } from '../../atoms/Home/HomePageContent';
 import { Label } from '../../atoms/Label';
 import { FaStar } from 'react-icons/fa'
 import styles from './HomeContent.module.scss';
+import { LocationObject } from '../../../pages/api/locationObject';
 
 interface Content {
   content : {
-    address :string;
+    addressCode :string;
+    location :string;
+    lotNumber :string;
     distance :number;
     date :string;
     price :number;
-    imgUrl :string;
+    imageUrl :string;
     accommodationId :number;
     avgRate :number;
-    like :boolean;
+    bookmarked :boolean;
   },
   isActiveBookmark :any;
 }
 
 const HomeContent = ({ content, isActiveBookmark } :Content) => {
-  const { address, distance, date, price, imgUrl, accommodationId, like, avgRate } = content;
+  const { addressCode, location, lotNumber, distance, date, price, imageUrl, accommodationId, bookmarked, avgRate } = content;
   return (
     <div className={styles.contents}>
-      <Image contentId={accommodationId} contentLike={like} isActiveBookmark={isActiveBookmark}/>
-      <Link href={`/detail/${accommodationId}`}>
+      <Image contentId={accommodationId} contentLike={bookmarked} isActiveBookmark={isActiveBookmark} imageUrl={imageUrl}/>
+      <Link href={{ 
+        pathname: `/detail/${accommodationId}`,
+        query: { accommodationId : JSON.stringify(accommodationId)}
+      }} >
         <div className={styles.content}>
-          <Label content={address} fontWeight='700' fontSize='15px'/>
+          <Label content={`${LocationObject[addressCode].area} ${LocationObject[addressCode].district}`} fontWeight='700' fontSize='15px'/>
           <div className={styles.rate}>
             <FaStar />
             <Label content={avgRate}/>

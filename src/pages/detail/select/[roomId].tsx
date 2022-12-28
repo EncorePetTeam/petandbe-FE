@@ -2,6 +2,8 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 import { DetailAreaInfo } from '../../../components/atoms/Detail/DetailAreaInfo';
 import { DetailImage } from '../../../components/atoms/Detail/DetailImage';
+import { DetailReview } from '../../../components/atoms/Detail/DetailReview';
+import { DetailRoomReview } from '../../../components/atoms/Detail/DetailRoomReview';
 import { SeoHead } from '../../../components/atoms/SeoHead';
 import { DetailRoomInfo } from '../../../components/molecules/Detail/DetailRoomInfo';
 
@@ -30,17 +32,21 @@ interface RoomPageProps {
 
 
 const RoomPage = () => {
-  const productsName = 'Ex'
-  const router = useRouter()
+  const productsName = 'Ex';
+  const router = useRouter();
+  console.log(router.query.room);
+  // console.log(JSON.parse(router.query.room))
   return (
     <div className='detail__content'>
       <SeoHead title={`펫앤비 | ${productsName}`} />
       {/* <DetailMenu /> */}
       <div>
         <DetailImage />
-        <DetailAreaInfo room={JSON.parse(router.query.room)}/>
+        <DetailAreaInfo room={router.query.room && JSON.parse(router.query.room)}/>
       </div>
       <div className='room'>
+        <DetailRoomReview />
+        <DetailRoomReview />
       </div>
       <div>
         판매자정보
@@ -64,6 +70,9 @@ const RoomPage = () => {
       <style jsx>{`
         .room {
           background-color: white;
+        }
+        .room > div + div {
+          border-bottom: 1px solid #ccc;
         }
       `}</style>
     </div>

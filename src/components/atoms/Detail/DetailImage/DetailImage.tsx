@@ -2,13 +2,13 @@ import React from 'react'
 import styles from './DetailImage.module.scss'
 
 interface DetailImageProps {
-  url? : string,
+  imgUrl? : Array<string>,
 }
 
-const DetailImage = ({ url } :DetailImageProps) => {
+const DetailImage = ({ imgUrl } :DetailImageProps) => {
   return (
     <div className={styles.image}>
-      <img src={url} alt="이미지" />
+      <img src={imgUrl[0]} alt="이미지" />
     </div>
   )
 }

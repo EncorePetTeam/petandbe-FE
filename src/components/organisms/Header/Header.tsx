@@ -4,6 +4,7 @@ import { Logo } from '../../atoms/Logo'
 import { HomeMenu } from '../../molecules/HomeMenu'
 import { SearchHeader } from '../../molecules/SearchHeader'
 import { Menu } from '../../molecules/Menu'
+import { DetailMenu } from '../../molecules/Detail/DetailMenu'
 
 type Props = {}
 
@@ -26,28 +27,40 @@ const btnSearchGroup = [
 ]
 
 interface HeaderProps<T> {
-  homeHeader? :Array<T>;
+  homeHeader ?:Array<T>;
+  openModal ?: any;
 }
 
 interface HomeProps {
   menuName: string;
 }
 
-const Header = ({homeHeader} :HeaderProps<HomeProps>) => {
+const Header = ({ homeHeader, openModal } :HeaderProps<HomeProps>) => {
   const router = useRouter();
+  const [search, setSearch] = useState(false);
+  const onClickSearch = () => {
+    setSearch(!search);
+  }
   return (
     <>
       <nav className={router.pathname === '/' ? 'nav fixed' : 'nav'}>
-        <Logo />
-        <SearchHeader btnGroup={btnHomeGroup} />
-        <Menu />
+        <div className='nav__flex'>
+          <Logo />
+          <SearchHeader btnGroup={btnHomeGroup} onClickSearch={onClickSearch}/>
+        </div>
+        {/* <SearchHeader btnGroup={btnHomeGroup} /> */}
+        {/* <Menu openModal={openModal}/> */}
       </nav>
-      <HomeMenu />
-      {/* {
-        homeHeader
-        ? <Menu />
-        : null
-      } */}
+      { router.pathname === '/' && <HomeMenu /> }
+      <style jsx>{`
+        .nav__flex {
+          display: flex;
+          width: 100%;
+          max-width: 700px;
+          justify-content: space-between;
+          align-items: center;
+        }
+      `}</style>
     </>
   )
 }

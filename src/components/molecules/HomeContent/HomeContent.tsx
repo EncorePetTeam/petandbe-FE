@@ -1,31 +1,42 @@
 import Link from 'next/link';
 import React from 'react'
-import { Images } from '../../atoms/Home/HomePageContent'
-import { Label } from '../../atoms/Label'
-import styles from './HomeContent.module.scss'
+import { Image } from '../../atoms/Home/HomePageContent';
+import { Label } from '../../atoms/Label';
+import { FaStar } from 'react-icons/fa'
+import styles from './HomeContent.module.scss';
+import { LocationObject } from '../../../pages/api/locationObject';
 
 interface Content {
-  content :object;
+  content : {
+    addressCode :string;
+    location :string;
+    lotNumber :string;
+    distance :number;
+    date :string;
+    price :number;
+    imageUrl :string;
+    accommodationId :number;
+    avgRate :number;
+    bookmarked :boolean;
+  },
+  isActiveBookmark :any;
 }
 
-interface ContentDetail {
-  i :number;
-  location :string;
-  distance :number;
-  date :string;
-  price :number;
-  imgUrl :string,
-}
-
-const HomeContent = ({ content } :Content) => {
-  const { location, distance, date, price, imgUrl, id } = content;
+const HomeContent = ({ content, isActiveBookmark } :Content) => {
+  const { addressCode, location, lotNumber, distance, date, price, imageUrl, accommodationId, bookmarked, avgRate } = content;
   return (
     <div className={styles.contents}>
-      <Link href={`/detail/${id}`}>
-        <Images />
+      <Image contentId={accommodationId} contentLike={bookmarked} isActiveBookmark={isActiveBookmark} imageUrl={imageUrl}/>
+      <Link href={{ 
+        pathname: `/detail/${accommodationId}`,
+        query: { accommodationId : JSON.stringify(accommodationId)}
+      }} >
         <div className={styles.content}>
-          <Label content={location} fontWeight='700' fontSize='15px'/>
-          <Label content={'평점'}/>
+          <Label content={`${LocationObject[addressCode].area} ${LocationObject[addressCode].district}`} fontWeight='700' fontSize='15px'/>
+          <div className={styles.rate}>
+            <FaStar />
+            <Label content={avgRate}/>
+          </div>
           {/* <div className={styles.content__location}></div>
           <div className={styles.content__scope}></div> */}
         </div>

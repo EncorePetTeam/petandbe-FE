@@ -13,6 +13,4 @@ function Button({btnText}: ButtonProps) {
   )
 }
 
-
-
 export { Button }

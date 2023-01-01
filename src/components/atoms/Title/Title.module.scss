@@ -2,10 +2,22 @@
   width: 100%;  
   h1 {
     margin: 20px 0;
+    &.margin {
+      margin: 5px 0;
+    }
   }
 }
 
 .menu__items {
   display: flex;
   // width: 50%;
+  li {
+    &+li::before {
+      margin: 0 10px;
+      content: "·";
+    }
+    // &.divide::before {
+    //   content: ;
+    // }
+  }
 }

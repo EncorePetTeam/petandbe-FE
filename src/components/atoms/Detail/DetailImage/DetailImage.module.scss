@@ -14,4 +14,10 @@
     background-color: #eee;
     border: 0.5px solid #ccc;
   }
+.image {
+  width: 100%;
+  aspect-ratio: 1 / 0.6;
+  background-color: #ccc;
+  display: flex;
+}
 }

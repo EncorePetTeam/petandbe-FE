@@ -1,16 +1,14 @@
 import React from 'react'
 import styles from './DetailImage.module.scss'
 
-type Props = {}
+interface DetailImageProps {
+  imgUrl? : Array<string>,
+}
 
-const DetailImage = (props: Props) => {
+const DetailImage = ({ imgUrl } :DetailImageProps) => {
   return (
-    <div className={styles.grid__image}>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div className={styles.image}>
+      <img src={imgUrl[0]} alt="이미지" style={{width: '100%'}}/>
     </div>
   )
 }

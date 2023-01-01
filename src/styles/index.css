@@ -12,6 +12,7 @@ body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	background-color: #eee;
 }
 
 a {
@@ -42,27 +43,39 @@ button {
 	height: 80px;
 	border-bottom: 1px solid #ccc;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	background-color: var(--light-mode);
-	z-index: 2;
+	z-index: 4;
 }
 
 .nav.fixed {
 	position: absolute;
 	position: sticky;
 	top: 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.nav.search {
+	height: 180px;
+	background-color: var(--light-footer);
+	transition: 0.5s all ease-in;
 }
 
 .home-menu {
 	/* width: var(--desktop-width); */
+	max-width: 700px;
 	padding: var(--desktop-padding);
 	display: flex;
+	/* justify-content: center; */
+	margin: 0 auto;
 	align-items: center;
-	height: 100px;
+	/* height: 100px; */
 	/* position: sticky; */
 	background-color: var(--light-mode);
 	padding: var(--desktop-padding);
-	z-index: 1;
+	z-index: 3;
+	flex-wrap: wrap;
+	border-bottom: 1px solid #ccc;
 }
 
 .home-menu.fixed {
@@ -72,7 +85,10 @@ button {
 }
 
 .detail {
-	width: 100%;
+	width: var(--desktop-width);
+	max-width: 1024px;
+	padding: var(--desktop-padding);
+	margin: auto;
 }
 
 .detail__header {
@@ -101,15 +117,55 @@ button {
 }
 
 .footer__menu-ul {
-	font-size: 14px;
-	display: flex;
-	align-items: center;
+	width: var(--desktop-width);
+	max-width: 700px;
+	padding: var(--desktop-padding);
+	background-color: var(--light-mode);
+	margin: 0 auto;
 }
 
-.footer__infos {
-	color: #888;
-	font-weight: 400;
-	font-size: 10px;
+.background-gray {
+	background-color: #eee;
+}
+
+.detail__content {
+	max-width: 700px;
+	margin: auto;
+	/* background-color: #888; */
+	/* background-color: white; */
+}
+.detail__content > div + div {
+	margin: 5px 0;
+	/* background-color: #eee; */
+}
+.mypage {
+	margin: 20px 0;
+}
+.bookmark__area {
+	/* width: 100%; */
+	display: flex;
+	overflow-x: scroll;
+}
+.bookmark__area > div {
+	width: 200px;
+	aspect-ratio: 1 / 1;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	flex-shrink: 0;
+}
+.footer {
+	width: var(--desktop-width);
+	height: 35px;
+	padding: 20px 24px;
 	border-top: 1px solid #ccc;
-	padding-top: 10px;
+	background-color: var(--light-mode);
+	z-index: 3;
+	position: absolute;
+	bottom: 0;
+}
+
+.footer.fixed {
+	/* position: absolute;
+	position: sticky;
+	bottom: 0; */
 }

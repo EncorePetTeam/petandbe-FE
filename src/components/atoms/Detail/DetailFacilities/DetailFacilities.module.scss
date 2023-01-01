@@ -1,0 +1,10 @@
+.flex {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  .content {
+    width: 50%;
+    font-size: 18px;
+    margin: 5px 0;
+  }
+}

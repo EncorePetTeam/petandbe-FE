@@ -6,40 +6,17 @@ import { HostInfo } from '../../atoms/HostInfo'
 import { Location } from '../../atoms/Location'
 import { RequiredRules } from '../../atoms/RequiredRules'
 import { Title } from '../../atoms/Title'
-import { DetailContents } from '../../molecules/DetailContents'
+import { DetailHostInfo } from '../../molecules/Detail/DetailHostInfo'
+import { DetailMenu } from '../../molecules/Detail/DetailMenu'
 import { FlexBox } from '../../molecules/FlexBox'
 import { LeftFlexBox } from '../../molecules/FlexBox/LeftFlexBox'
 import { RightFlexBox } from '../../molecules/FlexBox/RightFlexBox'
 import styles from './Section.module.scss'
 
-type Props = {}
-
-const Section = (props: Props) => {
+const Section = () => {
   return (
     <div>
-      <DetailImage />
-      <FlexBox>
-        <LeftFlexBox width={'60%'}>
-          <DetailContents />
-          <hr/>
-          <DetailContents />
-          <hr/>
-          <DetailContents />
-          <hr/>
-          <DetailContents />
-        </LeftFlexBox>
-        <RightFlexBox width={'40%'}>
-          <DetailReserve />
-        </RightFlexBox>
-      </FlexBox>
-      <hr />
-      <DetailReview />
-      <hr />
-      <Location />
-      <hr />
-      <HostInfo />
-      <hr />
-      <RequiredRules />
+      
     </div>
   )
 }

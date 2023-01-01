@@ -1,31 +1,29 @@
 import Link from 'next/link';
 import React from 'react'
-import DatePicker from 'react-datepicker'
 import { dataSetCommas } from '../../../../pages/api/dataSet';
 
-interface DetailRoomProps<T> {
-  room: Array<T>
+interface DetailRoomProps {
+  room: {
+    amount :number;
+    detailInfo ?: string; 
+    imageFileUrlList :Array<string>;
+    petCategory :string;
+    roomId :number;
+    roomName :string;
+    weight :string;
+  }
 }
 
-interface RoomInfo {
-  amount :number;
-  detailInfo ?: string; 
-  imageFileUrlList :Array<String>;
-  petCategory :string;
-  roomId :number;
-  roomName :string;
-  weight :string;
-}
-
-const DetailRoom = ({ room } :DetailRoomProps<RoomInfo>) => {
+const DetailRoom = ({ room } :DetailRoomProps) => {
   const { amount, detailInfo, imageFileUrlList, petCategory, roomId, roomName, weight } = room;
+  console.log(room)
   return (
     <div className='room'>
       <Link href={{ 
         pathname: `/detail/select/${roomId}`,
         query: { room : JSON.stringify(room)}
       }} >
-      <img src={imageFileUrlList[0]} alt="" className='room__img'/>
+      <img src={imageFileUrlList && imageFileUrlList[0]} alt="" className='room__img'/>
       <h3>{roomName}</h3>
       {/* <span>{item}</span> */}
       <div className='flex__area'>

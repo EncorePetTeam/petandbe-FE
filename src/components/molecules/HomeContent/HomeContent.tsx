@@ -8,7 +8,7 @@ import { LocationObject } from '../../../pages/api/locationObject';
 
 interface Content {
   content : {
-    addressCode :string;
+    addressCode :string | any;
     location :string;
     lotNumber :string;
     distance :number;

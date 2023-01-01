@@ -10,7 +10,7 @@ interface DetailRoomInfoProps<T> {
 interface RoomInfo {
   amount :number;
   detailInfo ?: string; 
-  imageFileUrlList :Array<String>;
+  imageFileUrlList :Array<string>;
   petCategory :string;
   roomId :number;
   roomName :string;
@@ -25,13 +25,13 @@ const DetailRoomInfo = ({roomInfos} :DetailRoomInfoProps<RoomInfo>) => {
         <div className="date__area">
         <DatePicker 
           selected={startDate} 
-          onChange={date => setStartDate(date)} 
+          onChange={(date :any) => setStartDate(date)} 
           dateFormat= "yyyy-MM-dd"
           className='date__input'
         />
         <DatePicker 
           selected={startDate} 
-          onChange={date => setStartDate(date)} 
+          onChange={(date :any) => setStartDate(date)} 
           dateFormat= "yyyy-MM-dd"
           className='date__input'
         />        

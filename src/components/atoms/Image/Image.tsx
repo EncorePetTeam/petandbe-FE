@@ -9,10 +9,10 @@ const Image = () => {
     const imageLists = event.target.files;
     let imageUrlLists = [...showImages];
 
-    for (let i = 0; i < imageLists.length; i++) {
-      const currentImageUrl = URL.createObjectURL(imageLists[i]);
-      imageUrlLists.push(currentImageUrl);
-    }
+    // for (let i = 0; i < imageLists.length; i++) {
+    //   const currentImageUrl = URL.createObjectURL(imageLists[i]);
+    //   imageUrlLists.push(currentImageUrl);
+    // }
 
     if (imageUrlLists.length > 10) {
       imageUrlLists = imageUrlLists.slice(0, 10);
@@ -28,9 +28,9 @@ const Image = () => {
 
   return (
     <div className={styles.addPicture}>
-      <label htmlFor="input-file" className={styles.addButton} onChange={handleAddImages}>
+      {/* <label htmlFor="input-file" className={styles.addButton} onChange={handleAddImages}>
         <input type="file" id="input-file" multiple className={styles.addButton} placeholder="사진추가" />
-      </label>
+      </label> */}
       <div className={styles.imagefloat}>
       {showImages.map((image, id) => (
         <div className={styles.imageContainer} key={id}>

@@ -16,7 +16,7 @@ const DetailTab = React.memo(({ tabItems, tabHandle, selectTab } :DetailTabProps
   return (
     <ul className={styles.tabItems}>
       {tabItems.map((current)=>
-        <li className={selectTab === current.id && styles.active} key={current.id} onClick={()=>tabHandle(current.id)}>{current.name}</li>
+        <li className={selectTab === current.id ? styles.active : styles.normal} key={current.id} onClick={()=>tabHandle(current.id)}>{current.name}</li>
       )}
       {/* <li>객실선택</li>
       <li>위치/교통</li>

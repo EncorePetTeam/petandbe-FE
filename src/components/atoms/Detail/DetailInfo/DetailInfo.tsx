@@ -1,10 +1,6 @@
 import React from 'react'
-import { FlexBox } from '../../../molecules/FlexBox'
-import { LeftFlexBox } from '../../../molecules/FlexBox/LeftFlexBox'
-import { RightFlexBox } from '../../../molecules/FlexBox/RightFlexBox'
 import { MdOutlineChair } from 'react-icons/md'
 import styles from './DetailInfo.module.scss'
-import { Content } from '../../Home/HomePageContent'
 
 interface DetailInfoProps<T> {
   detailInfo : Array<T>

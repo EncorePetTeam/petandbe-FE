@@ -7,7 +7,7 @@ type Props = {}
 const DetailReserve = (props: Props) => {
   return (
     <div className='reserve'>
-      <Title title='가격' />
+      {/* <Title title='가격' /> */}
       <div className='input__area'>
         <div className='calendar'>
           <div className="flex__input">

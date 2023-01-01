@@ -7,6 +7,7 @@ import { DetailRoomReview } from '../../../components/atoms/Detail/DetailRoomRev
 import { HostInfo } from '../../../components/atoms/HostInfo';
 import { SeoHead } from '../../../components/atoms/SeoHead';
 import { GoChevronRight } from 'react-icons/go'
+import { GetServerSideProps } from 'next';
 
 const tabItems = [
   {
@@ -27,22 +28,20 @@ const tabItems = [
   },
 ]
 
-interface RoomPageProps {
-  
-}
 
-
-const RoomPage = () => {
+const RoomPage = ({roomInfo} :any) => {
   const productsName = 'Ex';
   const router = useRouter();
+  const test :string[]= !router.query.room ? null : JSON.parse(router.query.room)
   // console.log(JSON.parse(router.query.room))
-  console.log(router.query.room)
+  // const test = router.query.room ? JSON.parse(router.query.room) : null;
+  
   return (
     <div className='detail__content'>
       <SeoHead title={`펫앤비 | ${productsName}`} />
       {/* <DetailMenu /> */}
       <div>
-        <DetailImage imgUrl={JSON.parse(router.query.room).imageFileUrlList}/>
+        <DetailImage imgUrl={router.query.room && JSON.parse(router.query.room).imageFileUrlList}/>
         <DetailAreaInfo room={JSON.parse(router.query.room)}/>
       </div>
       <div className='room'>
@@ -89,6 +88,13 @@ const RoomPage = () => {
       `}</style>
     </div>
   )
+}
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const roomInfo = await (await fetch(`http://localhost:4000/api/roomInfos/${context.query.room.roomId}`)).json();
+  return { props: { 
+                    roomInfo
+                  } 
+                };
 }
 
 export default RoomPage;

@@ -4,13 +4,13 @@ import { Label } from '../../components/atoms/Label';
 import { Title } from '../../components/atoms/Title';
 import { FlexBox } from '../../components/molecules/FlexBox';
 import { LeftFlexBox } from '../../components/molecules/FlexBox/LeftFlexBox/LeftFlexBox';
-import { RightFlexBox } from '../../components/molecules/FlexBox/RightFlexBox';
+// import { RightFlexBox } from '../../components/molecules/FlexBox/RightFlexBox';
 
 interface MyPageProps {
   openModal ?: any;
 }
 
-const MyPage = ({ openModal }) => {
+const MyPage = ({ openModal } :any) => {
   return (
     <FlexBox>
         <LeftFlexBox width={'30%'}>
@@ -18,9 +18,9 @@ const MyPage = ({ openModal }) => {
             <Infocard />
           </div>
         </LeftFlexBox>
-        <RightFlexBox width={'70%'} paddingLeft={'15'}>
+        <div style={{width: '70%', paddingLeft:'15px'}}>
           <div className="mypage">
-            <Title title='안녕하세요. 저는 호스트입니다.' />
+            {/* <Title title='안녕하세요. 저는 호스트입니다.' /> */}
             <Label content={`회원가입: 2022`} fontSize='13px' color='#999'/>
             <Label content={`프로필 수정하기`} fontSize='13px' color='black'/>
             <Title title='북마크' />
@@ -44,7 +44,7 @@ const MyPage = ({ openModal }) => {
               <div></div>
             </div>
           </div>
-        </RightFlexBox>
+        </div>
     </FlexBox>
   )
 }

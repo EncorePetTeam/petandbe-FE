@@ -1,7 +1,6 @@
 import React from 'react'
 import { FlexBox } from '../../molecules/FlexBox'
 import { LeftFlexBox } from '../../molecules/FlexBox/LeftFlexBox'
-import { RightFlexBox } from '../../molecules/FlexBox/RightFlexBox'
 import { Title } from '../Title'
 
 type Props = {}
@@ -11,15 +10,12 @@ const HostInfo = (props: Props) => {
     <div className='flex'>
       <div className="host">
         <div className="host__icon"></div>
-        <Title title='호스트 : 님' />
+        {/* <Title title='호스트 : 님' /> */}
       </div>
       <FlexBox>
         <LeftFlexBox width='50%'>
 1
         </LeftFlexBox>
-        <RightFlexBox width='50%'>
-1
-        </RightFlexBox>
       </FlexBox>
       <style jsx>{`
         .flex {

@@ -1,8 +1,6 @@
 import React from 'react'
 import { DetailDescription } from '../../../atoms/Detail/DetailDescription'
-import { DetailFacilities } from '../../../atoms/Detail/DetailFacilities'
 import { DetailInfo } from '../../../atoms/Detail/DetailInfo'
-import { DetailLocationImage } from '../../../atoms/Detail/DetailLocationImage'
 import { Title, TitleMenu } from '../../../atoms/Title'
 import { FlexBox } from '../../FlexBox'
 
@@ -94,7 +92,7 @@ const detailFacilities = [
 const DetailHostInfo = (props: Props) => {
   return (
     <>
-      <Title title='닉네임 님이 운영중인 숙소'/>
+      {/* <Title title='닉네임 님이 운영중인 숙소'/> */}
       <div className="detail__header">
         <TitleMenu menuItems={leftTitleMenuItems}/>
         <TitleMenu menuItems={rightTitleMenuItems}/>
@@ -107,15 +105,6 @@ const DetailHostInfo = (props: Props) => {
           <DetailDescription detailDescription={detailDescription}/>
           <hr />
         </>
-      }
-      {detailLocationImage && 
-        <>
-          <DetailLocationImage detailLocationImage={detailLocationImage} />
-          <hr />
-        </>
-      }
-      {detailFacilities &&
-        <DetailFacilities contents={detailFacilities}/>
       }
     </>
   )

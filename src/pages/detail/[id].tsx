@@ -2,55 +2,12 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 import { DetailAreaInfo } from '../../components/atoms/Detail/DetailAreaInfo';
 import { DetailImage } from '../../components/atoms/Detail/DetailImage';
-import { DetailReserve } from '../../components/atoms/Detail/DetailReserve';
-import { DetailReview } from '../../components/atoms/Detail/DetailReview';
 import { DetailTab } from '../../components/atoms/Detail/DetailTab/DetailTab';
-import { HostInfo } from '../../components/atoms/HostInfo';
 import { Location } from '../../components/atoms/Location';
-import { RequiredRules } from '../../components/atoms/RequiredRules';
 import { SeoHead } from '../../components/atoms/SeoHead';
-import { DetailHostInfo } from '../../components/molecules/Detail/DetailHostInfo';
-import { DetailMenu } from '../../components/molecules/Detail/DetailMenu';
 import { DetailRoomInfo } from '../../components/molecules/Detail/DetailRoomInfo';
-import { FlexBox } from '../../components/molecules/FlexBox';
-import { LeftFlexBox } from '../../components/molecules/FlexBox/LeftFlexBox';
-import { RightFlexBox } from '../../components/molecules/FlexBox/RightFlexBox';
-import { Section } from '../../components/organisms/Section';
 import { GetServerSideProps } from 'next'
 import { GoChevronRight } from 'react-icons/go'
-
-const detailReview = [
-  {
-    id: 1,
-    userName: 'Kyla',
-    regDate: '2022년 11월',
-    content: '10/10 would recommend staying here',
-  },
-  {
-    id: 2,
-    userName: 'Kyla',
-    regDate: '2022년 11월',
-    content: '10/10 would recommend staying here',
-  },
-  {
-    id: 3,
-    userName: 'Kyla',
-    regDate: '2022년 11월',
-    content: '10/10 would recommend staying here',
-  },
-  {
-    id: 4,
-    userName: 'Kyla',
-    regDate: '2022년 11월',
-    content: '10/10 would recommend staying here',
-  },
-  {
-    id: 5,
-    userName: 'Kyla',
-    regDate: '2022년 11월',
-    content: '10/10 would recommend staying here',
-  },
-]
 
 const tabItems = [
   {
@@ -71,16 +28,7 @@ const tabItems = [
   },
 ]
 
-const defaultRoom = {
-  id : 1,
-  name : '호스트 정보',
-  score : 4.7,
-  title : '영등포 호텔',
-  parking :false,
-  reviewLength: 7143,
-}
-
-const DetailPage = ({response,roomInfo}) => {
+const DetailPage = ({response,roomInfo} :any) => {
   console.log(response)
   const [selectTab, setSelectTab] = useState(1);
   const handleTabItem = (id :number) => {

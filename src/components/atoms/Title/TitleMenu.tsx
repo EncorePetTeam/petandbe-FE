@@ -21,7 +21,7 @@ const TitleMenu = ({menuItems} :MenuProps<MenuItem>) => {
           key={menu.id}
           className={menu.divide && menu.href 
           ? `${styles.divide}` 
-          : null}
+          : styles.normal}
         >
             {menu.content}
         </li>

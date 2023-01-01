@@ -3,7 +3,7 @@ import styles from './Title.module.scss'
 
 interface TitleProps {
   title :string;
-  fontSize :number;
+  fontSize ?:number;
   margin ?:boolean;
 }
 

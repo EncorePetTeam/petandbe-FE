@@ -98,25 +98,6 @@ button {
 }
 
 .main {
-	/* width: var(--desktop-width); */
-	/* padding: var(--desktop-padding); */
-}
-
-.footer {
-	width: var(--desktop-width);
-	height: 60px;
-	padding: 20px 24px;
-	border-top: 1px solid #ccc;
-	background-color: var(--light-mode);
-}
-
-.footer.fixed {
-	position: absolute;
-	position: sticky;
-	bottom: 0;
-}
-
-.footer__menu-ul {
 	width: var(--desktop-width);
 	max-width: 700px;
 	padding: var(--desktop-padding);

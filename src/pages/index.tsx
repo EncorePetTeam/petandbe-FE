@@ -7,15 +7,11 @@ import { homeConnectApi } from './api/home/HomeDetail'
 import { GetServerSideProps } from 'next'
 import { RiContactsBookLine } from 'react-icons/ri'
 
-const addressCodeObject = {
-  '11011': {area:'서울특별시', district: '중랑구'}
-}
-
-const HomePage = ({ response }) => {
+const HomePage = ({ response } :any) => {
   const [contents, setContents] = useState(response.filteringAccommodationList);
   const isActiveBookmark = (accommodationId :number) => {    
     setContents(contents.map(
-      (content) => content.accommodationId === accommodationId 
+      (content :any) => content.accommodationId === accommodationId 
       ? {...content, like: !content.like}
       : content
     ))
@@ -24,7 +20,7 @@ const HomePage = ({ response }) => {
     <div style={{marginTop: '5px'}}>
       <SeoHead title={'펫앤비 | Home'} />
       <FlexBox>
-        {contents.map((current)=><HomeContent content={current} key={current.accommodationId} isActiveBookmark={isActiveBookmark}/>)}
+        {contents.map((current :any)=><HomeContent content={current} key={current.accommodationId} isActiveBookmark={isActiveBookmark}/>)}
       </FlexBox>
     </div>
   )

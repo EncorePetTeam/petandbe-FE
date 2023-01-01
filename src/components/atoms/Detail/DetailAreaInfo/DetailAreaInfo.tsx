@@ -3,31 +3,30 @@ import { Title } from '../../Title'
 import {BsHeartFill, BsHeart, BsShareFill} from 'react-icons/bs'
 import { dataSetCommas } from '../../../../pages/api/dataSet';
 
-interface DetailAreaInfoProps<T> {
-  room :Array<T>
+interface DetailAreaInfoProps {
+  room : {
+    accommodationName :string;
+    accommodationType :string;
+    addressCode :string;
+    addressDetail :string;
+    averageRate ?:number;
+    detailInfo ?:string;
+    imageFileUrlList :Array<string>;
+    location :string;
+    lotNumber :string;
+    reviewCount ?:number;
+    userNickname :string;
+    weekendWorkingHours :string;
+    workingHours :string;
+    parking ?:string;
+  }
 }
 
-interface AreaInfo {
-  accommodationName :string;
-  accommodationType :string;
-  addressCode :string;
-  addressDetail :string;
-  averageRate ?:number;
-  detailInfo ?:string;
-  imageFileUrlList :Array<string>;
-  location :string;
-  lotNumber :string;
-  reviewCount ?:number;
-  userNickname :string;
-  weekendWorkingHours :string;
-  workingHours :string;
-}
-
-const DetailAreaInfo = ({ room } :DetailAreaInfoProps<AreaInfo>) => {
-  const { id, accommodationName, score, title, parking, reviewLength } = room;
+const DetailAreaInfo = ({ room } :DetailAreaInfoProps) => {
+  const { accommodationName, parking } = room;
+  console.log(room)
   return (
     <div className='host__area'>
-      {name}
       <div className="host__flex">
         <h2>{accommodationName}</h2>
         <div>

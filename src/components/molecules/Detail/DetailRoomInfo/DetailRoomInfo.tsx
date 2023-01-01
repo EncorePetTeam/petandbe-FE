@@ -3,72 +3,21 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { DetailRoom } from '../../../atoms/Detail/DetailRoom';
 
-type Props = {}
+interface DetailRoomInfoProps<T> {
+  roomInfos :Array<T>;
+}
 
-const room = [
-  {
-    id: 1,
-    name: 'StanDard',
-    item: '캣타워, 마약방석',
-    weekdaysStartTime: '22:00',
-    weekendStartTime: '22:00',
-    weekdays: 60_000,
-    weekend: 100_000,
-    petCategory: 'dog',
-    petWeight: 8,
-    imgUrl: '',
-  },
-  {
-    id: 2,
-    name: 'King',
-    item: '캣타워, 마약방석',
-    weekdaysStartTime: '22:00',
-    weekendStartTime: '22:00',
-    weekdays: 100_000,
-    weekend: 160_000,
-    petCategory: 'dog',
-    petWeight: 4,
-    imgUrl: '',
-  },
-  {
-    id: 3,
-    name: 'Deluxe',
-    item: '캣타워, 마약방석',
-    weekdaysStartTime: '22:00',
-    weekendStartTime: '22:00',
-    weekdays: 80_000,
-    weekend: 120_000,
-    petCategory: 'cat',
-    petWeight: 5,
-    imgUrl: '',
-  },
-  {
-    id: 4,
-    name: 'Twin',
-    item: '캣타워, 마약방석',
-    weekdaysStartTime: '22:00',
-    weekendStartTime: '22:00',
-    weekdays: 70_000,
-    weekend: 110_000,
-    petCategory: 'dog',
-    petWeight: 10,
-    imgUrl: '',
-  },
-  {
-    id: 5,
-    name: 'Event',
-    item: '캣타워, 마약방석',
-    weekdaysStartTime: '22:00',
-    weekendStartTime: '22:00',
-    weekdays: 50_000,
-    weekend: 80_000,
-    petCategory: 'cat',
-    petWeight: 15,
-    imgUrl: '',
-  },
-]
+interface RoomInfo {
+  amount :number;
+  detailInfo ?: string; 
+  imageFileUrlList :Array<String>;
+  petCategory :string;
+  roomId :number;
+  roomName :string;
+  weight :string;
+}
 
-const DetailRoomInfo = (props: Props) => {
+const DetailRoomInfo = ({roomInfos} :DetailRoomInfoProps<RoomInfo>) => {
   const [startDate, setStartDate] = useState(new Date());
   return (
     <div>
@@ -78,16 +27,18 @@ const DetailRoomInfo = (props: Props) => {
           selected={startDate} 
           onChange={date => setStartDate(date)} 
           dateFormat= "yyyy-MM-dd"
+          className='date__input'
         />
         <DatePicker 
           selected={startDate} 
           onChange={date => setStartDate(date)} 
           dateFormat= "yyyy-MM-dd"
+          className='date__input'
         />        
         </div>
       </div>
       <div className='room__area'>
-        {room.map((current)=><DetailRoom key={current.id} room={current}/>)}
+        {roomInfos.map((current)=><DetailRoom key={current.roomId} room={current}/>)}
       </div>
       <style jsx>{`
         .flex__area {

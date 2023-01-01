@@ -10,17 +10,17 @@ type Props = {}
 const menuIcons = [
   {
     id: 1,
-    content: '애견호텔',
+    content: '모텔',
     active: true,
   },
   {
     id: 2,
-    content: '애견카페',
+    content: '호텔',
     active: false,
   },
   {
     id: 3,
-    content: '애견수영장',
+    content: '펜션/풀빌라',
     active: false,
   },
 ]
@@ -28,10 +28,16 @@ const HomeMenu = (props: Props) => {
   const router = useRouter();
   return (
     <div className={router.pathname === '/' ? 'home-menu fixed' : 'home-menu'}>
+      <h4 className='menu'>바로가기</h4>
       {menuIcons 
-        && menuIcons.map((current)=><HomeMenuIcon key={current.id} content={current.content} active={current.active}/>)
+        && menuIcons.map((current)=><HomeMenuIcon key={current.id} content={current.content} active={current.active} id={current.id}/>)
       }
-      {/* <HomeMenuIcon /> */}
+      <style jsx>{`
+        .menu {
+          width: 100%;
+          margin: 0.8rem 0;
+        }
+      `}</style>
     </div>
   )
 }

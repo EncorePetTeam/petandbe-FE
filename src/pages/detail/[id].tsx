@@ -17,6 +17,7 @@ import { LeftFlexBox } from '../../components/molecules/FlexBox/LeftFlexBox';
 import { RightFlexBox } from '../../components/molecules/FlexBox/RightFlexBox';
 import { Section } from '../../components/organisms/Section';
 import { GetServerSideProps } from 'next'
+import { GoChevronRight } from 'react-icons/go'
 
 const detailReview = [
   {
@@ -79,30 +80,30 @@ const defaultRoom = {
   reviewLength: 7143,
 }
 
-const DetailPage = ({response}) => {
-  console.log(response.imageFileUrlList)
-  const productsName = 'Ex'
+const DetailPage = ({response,roomInfo}) => {
+  console.log(response)
   const [selectTab, setSelectTab] = useState(1);
   const handleTabItem = (id :number) => {
     setSelectTab(id);
   }
   return (
     <div className='detail__content'>
-      <SeoHead title={`펫앤비 | ${productsName}`} />
+      <SeoHead title={`펫앤비 | ${response.accommodationName}`} />
       {/* <DetailMenu /> */}
       <div>
         <DetailImage imgUrl={response.imageFileUrlList}/>
-        <DetailAreaInfo room={defaultRoom}/>
+        <DetailAreaInfo room={response}/>
       </div>
       <div className='room'>
         <DetailTab tabItems={tabItems} tabHandle={handleTabItem} selectTab={selectTab}/>
-        { selectTab === 1 && <DetailRoomInfo /> }
+        { selectTab === 1 && <DetailRoomInfo roomInfos={roomInfo.roomRetrievalInfos}/> }
         { selectTab === 2 && <Location /> }
         { selectTab === 3 && <Location /> }
         { selectTab === 4 && <Location /> }
       </div>
-      <div>
-        판매자정보
+      <div className='host'>
+        <h3>판매자 정보</h3>
+        <h3><GoChevronRight /></h3>
       </div>
       {/* <FlexBox>
         <LeftFlexBox width={'60%'}>
@@ -124,21 +125,28 @@ const DetailPage = ({response}) => {
         .room {
           background-color: white;
         }
+        .host {
+          background-color: white;
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+        }
+        .host h3 {
+          margin: 0;
+          padding: 1.2rem;
+        }
       `}</style>
     </div>
   )
 }
-export const getServerSideProps: GetServerSideProps = async () => {
-  // const router = useRouter();
-  const response = await (await fetch(`http://localhost:4000/api/accommodationFilter/8`)).json();
-  return { props: { response } };
-  // try {
-  //   const response = await axios.get("http://localhost:4000/api/filteringAccommodationList")
-  //     .then((result) => console.log(result));
-  //   return { props: { response } };
-  // } catch(e) {
-  //   throw new Error(`${e}`);
-  // }
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const response = await (await fetch(`http://localhost:4000/api/accommodationFilter/${context.query.id}`)).json();
+  const roomInfo = await (await fetch(`http://localhost:4000/api/roomInfos/${context.query.id}`)).json();
+  return { props: { 
+                    response,
+                    roomInfo
+                  } 
+                };
 }
 
 export default DetailPage;

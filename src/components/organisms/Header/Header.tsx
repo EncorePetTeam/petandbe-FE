@@ -44,12 +44,23 @@ const Header = ({ homeHeader, openModal } :HeaderProps<HomeProps>) => {
   return (
     <>
       <nav className={router.pathname === '/' ? 'nav fixed' : 'nav'}>
-        <Logo />
-        <SearchHeader btnGroup={btnHomeGroup} onClickSearch={onClickSearch}/>
+        <div className='nav__flex'>
+          <Logo />
+          <SearchHeader btnGroup={btnHomeGroup} onClickSearch={onClickSearch}/>
+        </div>
         {/* <SearchHeader btnGroup={btnHomeGroup} /> */}
-        <Menu openModal={openModal}/>
+        {/* <Menu openModal={openModal}/> */}
       </nav>
       { router.pathname === '/' && <HomeMenu /> }
+      <style jsx>{`
+        .nav__flex {
+          display: flex;
+          width: 100%;
+          max-width: 700px;
+          justify-content: space-between;
+          align-items: center;
+        }
+      `}</style>
     </>
   )
 }

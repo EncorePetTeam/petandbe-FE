@@ -8,29 +8,29 @@ interface DetailRoomProps<T> {
 }
 
 interface RoomInfo {
-  id: number;
-  name: string;
-  item: string;
-  startTime: string;
-  weekdays: number;
-  weekend: number;
+  amount :number;
+  detailInfo ?: string; 
+  imageFileUrlList :Array<String>;
+  petCategory :string;
+  roomId :number;
+  roomName :string;
+  weight :string;
 }
 
 const DetailRoom = ({ room } :DetailRoomProps<RoomInfo>) => {
-  const { id, name, item, startTime, weekdays, weekend } = room;
-  console.log(room)
+  const { amount, detailInfo, imageFileUrlList, petCategory, roomId, roomName, weight } = room;
   return (
     <div className='room'>
       <Link href={{ 
-        pathname: `/detail/select/${id}`,
+        pathname: `/detail/select/${roomId}`,
         query: { room : JSON.stringify(room)}
       }} >
-      <img src="" alt="" className='room__img'/>
-      <h3>{name}</h3>
-      <span>{item}</span>
+      <img src={imageFileUrlList[0]} alt="" className='room__img'/>
+      <h3>{roomName}</h3>
+      {/* <span>{item}</span> */}
       <div className='flex__area'>
-        <span>숙박({startTime} ~)</span>
-        <span className='text--bold'>{dataSetCommas(weekdays)}원</span>
+        {/* <span>숙박({startTime} ~)</span> */}
+        <span className='text--bold'>{dataSetCommas(amount)}원</span>
       </div>
       <button>객실 선택하기</button>
       </Link>

@@ -8,8 +8,6 @@ interface LayOutProps {
   children : ReactNode;
 }
 
-type Props = {}
-
 const Layout = ({children} :LayOutProps) => {
   const [modal, setModal] = useState({ active: false });
   const openModal = () => {
@@ -22,7 +20,7 @@ const Layout = ({children} :LayOutProps) => {
       <main className={router.pathname.includes('/detail') ? `main background-gray` : `main`}>
         {children}
       </main>
-      <Footer />
+      {router.pathname ==='/' && <Footer />}
       {modal.active && <Modal openModal={openModal}/>}
     </div>
   )

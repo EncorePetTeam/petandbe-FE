@@ -8,21 +8,28 @@ interface DetailAreaInfoProps<T> {
 }
 
 interface AreaInfo {
-  id :number;
-  name :string;
-  score :number;
-  title :string;
-  parking :boolean;
-  reviewLength? :number;
+  accommodationName :string;
+  accommodationType :string;
+  addressCode :string;
+  addressDetail :string;
+  averageRate ?:number;
+  detailInfo ?:string;
+  imageFileUrlList :Array<string>;
+  location :string;
+  lotNumber :string;
+  reviewCount ?:number;
+  userNickname :string;
+  weekendWorkingHours :string;
+  workingHours :string;
 }
 
 const DetailAreaInfo = ({ room } :DetailAreaInfoProps<AreaInfo>) => {
-  const { id, name, score, title, parking, reviewLength } = room;
+  const { id, accommodationName, score, title, parking, reviewLength } = room;
   return (
     <div className='host__area'>
       {name}
       <div className="host__flex">
-        <h2>{title}</h2>
+        <h2>{accommodationName}</h2>
         <div>
           <span>
             <BsShareFill />

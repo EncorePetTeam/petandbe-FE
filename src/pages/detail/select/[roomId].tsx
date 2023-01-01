@@ -4,8 +4,9 @@ import { DetailAreaInfo } from '../../../components/atoms/Detail/DetailAreaInfo'
 import { DetailImage } from '../../../components/atoms/Detail/DetailImage';
 import { DetailReview } from '../../../components/atoms/Detail/DetailReview';
 import { DetailRoomReview } from '../../../components/atoms/Detail/DetailRoomReview';
+import { HostInfo } from '../../../components/atoms/HostInfo';
 import { SeoHead } from '../../../components/atoms/SeoHead';
-import { DetailRoomInfo } from '../../../components/molecules/Detail/DetailRoomInfo';
+import { GoChevronRight } from 'react-icons/go'
 
 const tabItems = [
   {
@@ -34,22 +35,23 @@ interface RoomPageProps {
 const RoomPage = () => {
   const productsName = 'Ex';
   const router = useRouter();
-  console.log(router.query.room);
   // console.log(JSON.parse(router.query.room))
+  console.log(router.query.room)
   return (
     <div className='detail__content'>
       <SeoHead title={`펫앤비 | ${productsName}`} />
       {/* <DetailMenu /> */}
       <div>
-        <DetailImage />
-        <DetailAreaInfo room={router.query.room && JSON.parse(router.query.room)}/>
+        <DetailImage imgUrl={JSON.parse(router.query.room).imageFileUrlList}/>
+        <DetailAreaInfo room={JSON.parse(router.query.room)}/>
       </div>
       <div className='room'>
         <DetailRoomReview />
         <DetailRoomReview />
       </div>
-      <div>
-        판매자정보
+      <div className='host'>
+        <h3>판매자 정보</h3>
+        <h3><GoChevronRight /></h3>
       </div>
       {/* <FlexBox>
         <LeftFlexBox width={'60%'}>
@@ -73,6 +75,16 @@ const RoomPage = () => {
         }
         .room > div + div {
           border-bottom: 1px solid #ccc;
+        }
+        .host {
+          background-color: white;
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+        }
+        .host h3 {
+          margin: 0;
+          padding: 1.2rem;
         }
       `}</style>
     </div>

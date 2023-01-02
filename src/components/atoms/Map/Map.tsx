@@ -10,7 +10,8 @@ function Map({ latitude, longitude }: MapProps) {
     const mapScript = document.createElement("script");
 
     mapScript.async = true;
-    mapScript.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API}&autoload=false`;
+    //mapScript.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API}&autoload=false`;
+    mapScript.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=4dfb0e3cc3703a0def3329fe375e5378&autoload=false`;
 
     document.head.appendChild(mapScript);
 

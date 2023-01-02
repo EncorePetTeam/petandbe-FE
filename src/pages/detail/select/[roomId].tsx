@@ -32,7 +32,9 @@ const tabItems = [
 const RoomPage = ({roomInfo} :any) => {
   const productsName = 'Ex';
   const router = useRouter();
-  const test :string[]= !router.query.room ? null : JSON.parse(router.query.room)
+  // const test :string[]= !router.query.room ? null : JSON.parse(router.query.room)
+  console.log(roomInfo)
+
   // console.log(JSON.parse(router.query.room))
   // const test = router.query.room ? JSON.parse(router.query.room) : null;
   
@@ -41,8 +43,8 @@ const RoomPage = ({roomInfo} :any) => {
       <SeoHead title={`펫앤비 | ${productsName}`} />
       {/* <DetailMenu /> */}
       <div>
-        <DetailImage imgUrl={router.query.room && JSON.parse(router.query.room).imageFileUrlList}/>
-        <DetailAreaInfo room={JSON.parse(router.query.room)}/>
+        <DetailImage imgUrl={roomInfo.imageFileUrlList}/>
+        <DetailAreaInfo room={roomInfo}/>
       </div>
       <div className='room'>
         <DetailRoomReview />
@@ -52,22 +54,6 @@ const RoomPage = ({roomInfo} :any) => {
         <h3>판매자 정보</h3>
         <h3><GoChevronRight /></h3>
       </div>
-      {/* <FlexBox>
-        <LeftFlexBox width={'60%'}>
-          <DetailHostInfo />
-        </LeftFlexBox>
-        <RightFlexBox width={'40%'}>
-          <DetailReserve />
-        </RightFlexBox>
-      </FlexBox>
-      <hr />
-      <DetailReview detailReview={detailReview}/>
-      <hr />
-      <Location /> */}
-      {/* <hr />
-      <HostInfo />
-      <hr />
-      <RequiredRules /> */}
       <style jsx>{`
         .room {
           background-color: white;
@@ -90,7 +76,7 @@ const RoomPage = ({roomInfo} :any) => {
   )
 }
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const roomInfo = await (await fetch(`http://localhost:4000/api/roomInfos/${context.query.room.roomId}`)).json();
+  const roomInfo = await (await fetch(`http://localhost:4000/api/room/${context.query.roomId}`)).json();
   return { props: { 
                     roomInfo
                   } 

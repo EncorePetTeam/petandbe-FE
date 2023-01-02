@@ -21,7 +21,7 @@ const DetailRoom = ({ room } :DetailRoomProps) => {
     <div className='room'>
       <Link href={{ 
         pathname: `/detail/select/${roomId}`,
-        query: { room : JSON.stringify(room)}
+        query: { roomId : JSON.stringify(roomId)}
       }} >
       <img src={imageFileUrlList && imageFileUrlList[0]} alt="" className='room__img'/>
       <h3>{roomName}</h3>

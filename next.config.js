@@ -24,6 +24,10 @@ const nextConfig = {
         source: "/api/roomInfos/:id",
         destination: `https://sg.petandbe.com/room/infos/:id`,
       },
+      {
+        source: "/api/room/:id",
+        destination: `https://sg.petandbe.com/room/:id`,
+      },
       // {
       //   source: "/api/movies/:id",
       //   destination: `https://api.themoviedb.org/3/movie/:id?api_key=${API_KEY}`,

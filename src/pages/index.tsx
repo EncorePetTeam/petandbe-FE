@@ -1,9 +1,7 @@
-import axios from 'axios'
 import { useState } from 'react'
 import { SeoHead } from '../components/atoms/SeoHead'
 import { FlexBox } from '../components/molecules/FlexBox'
 import { HomeContent } from '../components/molecules/HomeContent'
-import { homeConnectApi } from './api/home/HomeDetail'
 import { GetServerSideProps } from 'next'
 import { RiContactsBookLine } from 'react-icons/ri'
 

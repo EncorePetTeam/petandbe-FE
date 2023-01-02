@@ -19,6 +19,7 @@ interface DetailAreaInfoProps {
     weekendWorkingHours :string;
     workingHours :string;
     parking ?:string;
+    roomName :string;
   }
 }
 
@@ -28,7 +29,7 @@ const DetailAreaInfo = ({ room } :DetailAreaInfoProps) => {
   return (
     <div className='host__area'>
       <div className="host__flex">
-        <h2>{accommodationName}</h2>
+        <h2>{accommodationName ? accommodationName : room.roomName}</h2>
         <div>
           <span>
             <BsShareFill />

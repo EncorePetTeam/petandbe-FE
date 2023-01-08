@@ -1,28 +1,14 @@
 import React from 'react'
-import { Button } from '../../atoms/Button';
 import styles from './SearchHeader.module.scss'
 import {MdSearch} from 'react-icons/md'
 
-interface SearchProps<T> {
-  btnGroup :Array<T>;
-  onClickSearch ?:any;
-}
-
-interface BtnProps {
-  btnText :string;
-}
-
-const SearchHeader = ({btnGroup} :SearchProps<BtnProps>) => {
+const SearchHeader = () => {
   return (
     <div className={styles.search}>
-      {
-        btnGroup.map(({btnText},i) => 
-          <Button btnText={btnText} key={i} />
-        )
-      }
-      <button className={styles.search__btn}>
+      펫앤비를 검색하세요!
+      <div className={styles.btn__area}>
         <MdSearch />
-      </button>
+      </div>
     </div>
   )
 }

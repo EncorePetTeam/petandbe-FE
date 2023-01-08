@@ -5,6 +5,7 @@ import { Label } from '../../atoms/Label';
 import { FaStar } from 'react-icons/fa'
 import styles from './HomeContent.module.scss';
 import { LocationObject } from '../../../pages/api/locationObject';
+import { dataSetCommas } from '../../../pages/api/dataSet';
 
 interface Content {
   content : {
@@ -18,12 +19,13 @@ interface Content {
     accommodationId :number;
     avgRate :number;
     bookmarked :boolean;
+    roomAmount :number;
   },
   isActiveBookmark :any;
 }
 
 const HomeContent = ({ content, isActiveBookmark } :Content) => {
-  const { addressCode, location, lotNumber, distance, date, price, imageUrl, accommodationId, bookmarked, avgRate } = content;
+  const { addressCode, location, lotNumber, distance, date, price, imageUrl, accommodationId, bookmarked, avgRate, roomAmount } = content;
   return (
     <div className={styles.contents}>
       <Image contentId={accommodationId} contentLike={bookmarked} isActiveBookmark={isActiveBookmark} imageUrl={imageUrl}/>
@@ -42,7 +44,7 @@ const HomeContent = ({ content, isActiveBookmark } :Content) => {
         </div>
         <Label content={`${distance}km 거리이내`} fontSize='13px' color='#999'/>
         <Label content={date} fontSize='13px' color='#999'/>
-        <Label content={`₩${price} /박`} fontWeight='700' fontSize='15px'/>
+        <Label content={`₩${dataSetCommas(roomAmount)} /박`} fontWeight='700' fontSize='15px'/>
       </Link>
     </div>
   )

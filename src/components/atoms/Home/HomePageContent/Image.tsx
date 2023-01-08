@@ -11,6 +11,7 @@ interface ImageProps {
 }
 
 const Image = React.memo(({ contentId, contentLike, isActiveBookmark,imageUrl } :ImageProps) => {
+  console.log(contentId, contentLike)
   return (
     <div className={styles.background}>
       <Link href={`/detail/${contentId}`}>

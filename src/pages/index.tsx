@@ -3,10 +3,10 @@ import { SeoHead } from '../components/atoms/SeoHead'
 import { FlexBox } from '../components/molecules/FlexBox'
 import { HomeContent } from '../components/molecules/HomeContent'
 import { GetServerSideProps } from 'next'
-import { RiContactsBookLine } from 'react-icons/ri'
 
 const HomePage = ({ response } :any) => {
-  const [contents, setContents] = useState(response.filteringAccommodationList);
+  console.log(response)
+  const [contents, setContents] = useState(response);
   const isActiveBookmark = (accommodationId :number) => {    
     setContents(contents.map(
       (content :any) => content.accommodationId === accommodationId 
@@ -25,9 +25,9 @@ const HomePage = ({ response } :any) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await (await fetch('http://localhost:4000/api/filteringAccommodationList')).json();
-  console.log(response)
-  return { props: { response } };
+  const response = await (await fetch('https://sg.petandbe.com/filtering/accommodation')).json();
+  // console.log(response)
+  return { props: { response : response.filteringAccommodationList } };
 }
 
 export default HomePage;

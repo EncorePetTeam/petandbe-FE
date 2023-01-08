@@ -3,8 +3,7 @@ import React, { useState } from 'react'
 import { Logo } from '../../atoms/Logo'
 import { HomeMenu } from '../../molecules/HomeMenu'
 import { SearchHeader } from '../../molecules/SearchHeader'
-import { Menu } from '../../molecules/Menu'
-import { DetailMenu } from '../../molecules/Detail/DetailMenu'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 type Props = {}
 
@@ -18,12 +17,6 @@ const btnHomeGroup = [
   {
     btnText: '게스트 추가',
   },
-]
-
-const btnSearchGroup = [
-  {
-    btnText: '검색 시작하기'
-  }
 ]
 
 interface HeaderProps<T> {
@@ -46,7 +39,9 @@ const Header = ({ homeHeader, openModal } :HeaderProps<HomeProps>) => {
       <nav className={router.pathname === '/' ? 'nav fixed' : 'nav'}>
         <div className='nav__flex'>
           <Logo />
-          <SearchHeader btnGroup={btnHomeGroup} onClickSearch={onClickSearch}/>
+          {/* <SearchHeader onClickSearch={onClickSearch}/> */}
+          <SearchHeader />
+          <AiOutlineShoppingCart style={{fontSize: '24px', cursor: 'pointer'}}/>
         </div>
         {/* <SearchHeader btnGroup={btnHomeGroup} /> */}
         {/* <Menu openModal={openModal}/> */}

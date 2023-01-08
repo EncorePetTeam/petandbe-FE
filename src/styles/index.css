@@ -40,7 +40,7 @@ button {
 	display: flex;
 	width: var(--desktop-width);
 	padding: var(--desktop-padding);
-	height: 80px;
+	height: 60px;
 	border-bottom: 1px solid #ccc;
 	align-items: center;
 	justify-content: center;
@@ -81,7 +81,7 @@ button {
 .home-menu.fixed {
 	position: absolute;
 	position: sticky;
-	top: 81px;
+	top: 61px;
 }
 
 .detail {

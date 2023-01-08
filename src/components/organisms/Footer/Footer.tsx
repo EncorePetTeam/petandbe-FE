@@ -5,6 +5,7 @@ import { HiLocationMarker } from 'react-icons/hi'
 import { MdMyLocation } from 'react-icons/md'
 import { BsHeartFill } from 'react-icons/bs'
 import { FaUser } from 'react-icons/fa'
+import Link from 'next/link';
 
 type Props = {}
 
@@ -27,8 +28,10 @@ const Footer = (props: Props) => {
             내주변
           </li>
           <li>
-            <div className='icon'><BsHeartFill /></div>
-            찜
+            <Link href="/login">
+              <div className='icon'><BsHeartFill /></div>
+              찜
+            </Link>
           </li>
           <li>
             <div className='icon'><FaUser /></div>
